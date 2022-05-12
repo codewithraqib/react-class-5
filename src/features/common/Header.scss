@@ -1,0 +1,36 @@
+
+
+.nav-container {
+
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    padding: 20px;
+    background-color: aquamarine;
+
+    .logo-container {
+        img {
+            height: 60px;
+
+        }
+    }
+
+    .links-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .links-container-inner {
+            span {
+                padding: 10px;
+                margin: 0 10px;
+                background-color: beige;
+                border-radius: 8px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+}

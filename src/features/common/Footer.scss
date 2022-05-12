@@ -1,0 +1,19 @@
+.footer-container{
+    
+    background-color: aquamarine;
+    padding: 50px ;
+
+    .footer-container-inner{
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+
+        .footer-item{
+            margin: 0 10px;
+            // display: flex;
+            justify-content: center;
+        }
+
+    }
+}

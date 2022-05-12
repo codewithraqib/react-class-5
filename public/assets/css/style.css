@@ -1,0 +1,45 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.content-wrapper{
+    max-width: 60vw;
+    margin: auto;
+}
+
+
+.title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+.description{
+    font-size: 16px;
+    line-height: 1.5;
+    /* line-height: 32px; */
+
+}
+
+.dot-line-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dot-line-container .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: brown;
+}
+
+.dot-line-container .line{
+    width: 100px;
+    height: 1px;
+    background-color: brown;
+    margin-left: -2px;
+}
