@@ -1,7 +1,28 @@
 .teams-card-container{
-    height: 120px;
-    // width: 24%;
-    background-color: blue;
-    // margin: 0px 10px;
-    border-radius: 8px;
+ 
+    margin: 20px 0px;    
+  
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        
+        
+
+  
+.teams-card-inner{
+        /* padding: 82px; */
+        width: 205px;
+        height: 16rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: center;
+    background-color: #e2a599;
+
+}
+
+
+ 
 }

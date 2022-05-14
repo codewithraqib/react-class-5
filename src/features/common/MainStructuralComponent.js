@@ -1,6 +1,7 @@
 import React from 'react';
 import ServicesCard from './ServicesCard';
 import TeamCard from './TeamCard';
+import ProjectCard from './ProjectCard';
 
 class MainStructuralComponent extends React.PureComponent {
   constructor() {
@@ -32,15 +33,21 @@ class MainStructuralComponent extends React.PureComponent {
         </div>
 
         <div className="main-cards-container">
-          {this.props.services &&
-            this.props.services.map(service => <ServicesCard service={service} />)}
-
-          {this.props.teamMembers &&
-            this.props.teamMembers.map(member => <TeamCard member={member} />)}
-
-          {/* {this.props.projects &&
-            this.props.projects.map(projects => <Projectcard service={projects} />)} */}
+        {this.props.services &&
+          this.props.services.map(service => <ServicesCard service={service} />)}
         </div>
+
+         
+        {this.props.teamMembers ?
+        <div className="teams-card-container">
+          {this.props.teamMembers.map(member => <TeamCard member={member} />)}
+        </div> : null}
+        
+        
+        {this.props.projects ?
+          <div className="project-card-container">{ this.props.projects.map(project => <ProjectCard project={project} />)}
+        </div> : null}
+        
       </div>
     );
   }

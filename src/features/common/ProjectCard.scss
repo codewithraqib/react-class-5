@@ -1,0 +1,23 @@
+.project-card-container{
+ 
+  margin: 20px 0px;    
+ 
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    gap: 20px;
+ .project-card-inner{
+  width: 34rem;
+  height: 7rem;
+ 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+background-color: #e2a599;
+
+ }
+
+}

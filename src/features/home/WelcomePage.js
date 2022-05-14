@@ -21,13 +21,19 @@ class WelcomePage extends React.PureComponent {
         { id: 2, name: 'Name 3', desc: 'Mobile apps developer' },
         { id: 3, name: 'Name 4', desc: 'Mobile apps developer' },
       ],
+      projects: [
+        { id: 0, name: 'project 1', desc: 'Website Dev' },
+        { id: 1, name: 'project 2', desc: 'Mobile apps developer' },
+        { id: 2, name: 'project 3', desc: 'Mobile apps developer' },
+        { id: 3, name: 'project 4', desc: 'Mobile apps developer' },
+      ],
     };
   }
 
   render() {
     return (
       <div className="home-welcome-page">
-        <MyComponent message={'I am from welcome page'} />
+        {/* <MyComponent message={'I am from welcome page'} /> */}
 
         <AboutUs />
 
@@ -47,12 +53,13 @@ class WelcomePage extends React.PureComponent {
           teamMembers={this.state.teamMembers}
         />
 
-        {/* <MainStructuralComponent
+        {<MainStructuralComponent
           title={'Our Projects | Products'}
           desc={
             'We have developed a lot of products for ourselves and more for clients in which some prominent ones are '
           }
-        /> */}
+          projects={this.state.projects}
+        /> }
       </div>
     );
   }
