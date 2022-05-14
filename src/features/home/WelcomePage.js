@@ -13,7 +13,7 @@ class WelcomePage extends React.PureComponent {
   render() {
     return (
       <div className="home-welcome-page">
-        {/* <MyComponent message={'I am from welcome page'} /> */}
+        <MyComponent message={'I am from welcome page'} />
 
         <AboutUs />
       </div>

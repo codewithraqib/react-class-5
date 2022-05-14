@@ -1,3 +1,4 @@
+
 import React, { PureComponent } from 'react';
 
 class Footer extends React.PureComponent {

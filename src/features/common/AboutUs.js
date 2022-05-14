@@ -1,9 +1,6 @@
 import React from 'react';
 
 class AboutUs extends React.PureComponent {
-  goToPage = () => {
-    //some other logic which not visible in browser
-  };
   render() {
     return (
       <div className="content-wrapper about-us-container">
