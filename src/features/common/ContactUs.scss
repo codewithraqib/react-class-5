@@ -1,0 +1,75 @@
+.contact-main-container{
+  .title{
+    padding: 10px 0px;
+  }
+  background-color:#e45447 ;
+  color: white;
+ text-align: center;
+.dot-line-container{
+  display: flex;
+  justify-content: center;
+  .line{
+    position: relative;
+    background-color: white;
+  }
+ .dot{
+   position: absolute;
+   background-color: white;
+ }
+}
+.contact-inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px 0px;
+  
+  .contacts {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+
+.form{
+
+  input{
+    
+    padding: 10px;
+    margin: 4px 0px;
+    border-radius: 13px;
+    border: none;
+ 
+   
+  }
+  input[type=text]:focus {
+    border: none;
+    outline: none;
+  }
+
+  .formBtn{
+    display: flex;
+    justify-content: center;
+
+    .main-button{
+      display: flex;
+      justify-content: center;
+      min-width: 188px  !important;
+      &:hover{
+        background-color: #14d83e;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+   
+    }
+  }
+ 
+
+}
+.info{
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+}
+}

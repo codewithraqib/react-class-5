@@ -6,3 +6,4 @@ export { default as MainStructuralComponent } from './MainStructuralComponent';
 export { default as ServicesCard } from './ServicesCard';
 export { default as TeamCard } from './TeamCard';   
 export { default as ProjectCard } from './ProjectCard';
+export { default as ContactUs } from './ContactUs';

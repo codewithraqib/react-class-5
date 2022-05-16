@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import  ContactUs  from '../common/ContactUs';
 
 // export default function App({ children }) {
 //   return (
@@ -23,7 +24,7 @@ class App extends React.PureComponent {
       links: [
         { id: 1, name: 'Home', route: '/', active: true },
         { id: 2, name: 'About us', route: 'about-us', active: false },
-        { id: 3, name: 'Contact us', route: 'contact-us', active: false },
+        { id: 3, name: 'Contact us', route: 'ContactUs', active: false },
         { id: 4, name: 'Offices ', route: 'offices', active: false },
         // true,
       ],
@@ -94,7 +95,7 @@ class App extends React.PureComponent {
           // myName="raqib"
         />
         <div className="page-container">{this.props.children}</div>
-
+       
         <Footer history={this.props.history} footerLinks={this.state.footerLinks} />
       </div>
     );

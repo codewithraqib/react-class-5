@@ -2,6 +2,7 @@ import React from 'react';
 import ServicesCard from './ServicesCard';
 import TeamCard from './TeamCard';
 import ProjectCard from './ProjectCard';
+import ContactUs from './ContactUs';
 
 class MainStructuralComponent extends React.PureComponent {
   constructor() {
@@ -55,8 +56,11 @@ class MainStructuralComponent extends React.PureComponent {
             ))}
           </div>
         ) : null}
+        {/* <div><ContactUs/></div> */}
       </div>
+     
     );
+    
   }
 }
 

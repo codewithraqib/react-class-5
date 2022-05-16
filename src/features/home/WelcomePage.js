@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutUs, MainStructuralComponent } from '../common';
+import { AboutUs, ContactUs, MainStructuralComponent } from '../common';
 import Header from '../common/Header';
 import MyComponent from './MyComponent';
 
@@ -60,7 +60,9 @@ class WelcomePage extends React.PureComponent {
           }
           projects={this.state.projects}
         />
+        <ContactUs/>
       </div>
+      
     );
   }
 }
