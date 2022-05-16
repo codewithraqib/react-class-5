@@ -1,0 +1,27 @@
+.hero-container{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    justify-content: center;
+    gap: 15rem;
+     
+
+    .title{
+      
+        display: flex;
+        
+        flex-direction: column;
+        justify-content: center;
+        .sub-title{
+            font-size: 14px;
+        }
+        span{
+            margin-bottom: 30px;
+        }
+
+    }
+
+
+    .image-container img{
+        height: 371px;
+    }
+}
