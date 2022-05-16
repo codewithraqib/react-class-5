@@ -53,13 +53,13 @@ class WelcomePage extends React.PureComponent {
           teamMembers={this.state.teamMembers}
         />
 
-        {<MainStructuralComponent
+        <MainStructuralComponent
           title={'Our Projects | Products'}
           desc={
             'We have developed a lot of products for ourselves and more for clients in which some prominent ones are '
           }
           projects={this.state.projects}
-        /> }
+        />
       </div>
     );
   }

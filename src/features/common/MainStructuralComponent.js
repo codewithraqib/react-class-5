@@ -15,6 +15,7 @@ class MainStructuralComponent extends React.PureComponent {
   };
 
   render() {
+    console.log('All props in mainStr are----', this.props);
     return (
       <div className="main-structure-container content-wrapper">
         <div className="title-container">
@@ -32,22 +33,28 @@ class MainStructuralComponent extends React.PureComponent {
           </div>
         </div>
 
-        <div className="main-cards-container">
-        {this.props.services &&
-          this.props.services.map(service => <ServicesCard service={service} />)}
-        </div>
+        {this.props.services ? (
+          <div className="main-cards-container">
+            {this.props.services &&
+              this.props.services.map(service => <ServicesCard service={service} />)}
+          </div>
+        ) : null}
 
-         
-        {this.props.teamMembers ?
-        <div className="teams-card-container">
-          {this.props.teamMembers.map(member => <TeamCard member={member} />)}
-        </div> : null}
-        
-        
-        {this.props.projects ?
-          <div className="project-card-container">{ this.props.projects.map(project => <ProjectCard project={project} />)}
-        </div> : null}
-        
+        {this.props.teamMembers ? (
+          <div className="teams-card-container">
+            {this.props.teamMembers.map(member => (
+              <TeamCard member={member} />
+            ))}
+          </div>
+        ) : null}
+
+        {this.props.projects ? (
+          <div className="projects-card-container">
+            {this.props.projects.map(project => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        ) : null}
       </div>
     );
   }

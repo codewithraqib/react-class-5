@@ -1,23 +1,35 @@
 .project-card-container{
- 
-  margin: 20px 0px;    
- 
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    gap: 20px;
- .project-card-inner{
-  width: 34rem;
-  height: 7rem;
- 
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 10px;
+  justify-content: space-between;
+  background-color: #f9f9ff;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 80px;
   align-items: center;
-background-color: #e2a599;
 
- }
 
+  &:hover{
+    background-color: #90acd1;
+    cursor: pointer;
+  }
+
+
+
+  .brand{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    min-width: 25%;
+    border-radius: 30px;
+    border: 1px solid #90acd1;
+    min-height: 40px;
+    
+
+
+      .title{
+        font-size: 16px;
+        margin-bottom: 0px;
+      }
+  }
 }
