@@ -1,4 +1,4 @@
-.hero-container{
+.blog-inner{
     display: grid;
     grid-template-columns:1fr 1fr ;
     justify-content: center;
@@ -23,5 +23,46 @@
 
     .image-container img{
         height: 371px;
+    }
+    .desc{
+        line-height: 1.5;
+    }
+   
+}
+.line{
+    padding: 1px;
+    margin: 20px;
+    background-color: rgb(37, 34, 34);
+}
+.Articles-container{
+    .art-cards{
+        margin: 20px;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr ;
+        justify-content: center;
+        gap: 3rem;
+        .card{
+            background-color: #6c8cac;
+            font-size: 2rem;
+            line-height: 1.3125em;
+            
+            font-weight: 500;
+            min-height: 230px;
+            .card-desc{
+                padding: 1.125rem 1.125rem 3rem;
+    
+            }
+            &:hover{
+                // transition: all .3s ease-in-out;
+                transform:  scale(1.03);
+                box-shadow:0.15s ease-in-out;
+                 transform: 0.15s ease-in-out; 
+                // background-color: #6c8cac;
+            }
+
+        }
+       
+
+
     }
 }
