@@ -48,17 +48,25 @@
             
             font-weight: 500;
             min-height: 230px;
+
+            
             .card-desc{
                 padding: 1.125rem 1.125rem 3rem;
     
             }
             &:hover{
-                // transition: all .3s ease-in-out;
+                transition: all 0.13s ease-in-out;
                 transform:  scale(1.03);
                 box-shadow:0.15s ease-in-out;
-                 transform: 0.15s ease-in-out; 
+                cursor: pointer;
+                //  transform: 0.15s ease-in-out; 
                 // background-color: #6c8cac;
+              
+             
             }
+          
+            
+           
 
         }
        

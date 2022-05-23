@@ -1,158 +1,249 @@
-.blog2-main-container{
-    display: grid;
-    grid-template-columns: 1fr 6fr 3fr;
-    .left-blog{
-        // display: flex;
-        // flex-direction: column;
-        
-        
-        .blog1-logo{
-            margin-bottom: 5rem;
-        
+.blog2-main-container {
+  display: grid;
+  grid-template-columns: 1fr 6fr 3fr;
+  .left-blog {
+    // display: flex;
+    // flex-direction: column;
+
+    .blog1-logo {
+      margin-bottom: 5rem;
+
+      img {
+        width: 40px;
+      }
+    }
+    .left-blog-links {
+      img {
+        width: 20px;
+        padding: 10px;
+      }
+    }
+  }
+  .center-blog {
+    .center-blog-header {
+      display: flex;
+      justify-content: space-between;
+
+      .blog-header-left {
+        display: flex;
+        .header-img {
+          img {
+            padding: 10px;
+            width: 40px;
+          }
+        }
+      }
+      .header-title {
+        font-size: 10px;
+        padding: 10px;
+      }
+      .blog-header-right {
+        padding: 10px;
+        display: flex;
+
+        .header-right-icons {
+          img {
+            width: 20px;
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .main-center-cantainer {
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      overflow-y: scroll;
+      height: 30%;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        padding: 3px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+
+      .title-desc {
+        line-height: 1.5;
+        margin-bottom: 30px;
+      }
+      .center-desc-main {
+        .cntr-desc-img {
+          img {
+            width: 70vw;
+          }
+        }
+        .center-desc {
+          line-height: 1.5;
+        }
+      }
+      // yjfyyudtetutr
+    }
+    .vid-tag{
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+    }
+
+    .center-blog-card{
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      gap: 10px;
+      background-color: #FAFAFA;
+      padding: 20px;
+      .cntr-blog-desc{
+        .title{
+          margin-top: 10px;
+        }
+        .cntr-card-time{
+          display: flex;
+          .cnter-card-star{
+            img{
+              margin-left: 5px;
+              height: 17px;
+            }
+          }
+        }
+       
+      }
+      .cntr-blog-img{
+        padding: 20px;
+       
+      }
+      .cntr-card-share{
+        display: flex;
+     justify-content: space-between;
+        .time-read{
+          margin-top: 10px;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          
+          .read-time{
+            margin-left: 5px;
+          }
+          .time-desc{
+            background-color: rgb(173, 173, 173);
+            border-radius: 8px;
+            padding: 4px;
+          }
+         
+        }
+        .share-icon{
+          img{
+            height: 20px;
+            padding: 10px;
+          }
+          
+        }
+      }
+
+    }
+  }
+  .right-blog {
+    padding: 10px;
+    .search {
+      input {
+        padding: 10px;
+        margin-left: 10px;
+        width: 70%;
+        border-radius: 15px;
+        outline: none;
+      }
+    }
+    .right-img {
+      margin-top: 2rem;
+      padding-left: 16px;
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 42px;
+      }
+    }
+    .right-title {
+      font-weight: 600;
+      padding-left: 24px;
+    }
+    .right-followers {
+      padding-left: 24px;
+      font-size: 13px;
+    }
+    .right-desc {
+      padding-left: 24px;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+    .right-follow-button {
+      display: flex;
+      padding-left: 24px;
+
+      margin-top: 10px;
+
+      .follow-button {
+        padding: 5px;
+        margin-right: 20px;
+        background-color: green;
+        border-radius: 8px;
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .follow-icon {
+        img {
+          width: 25px;
+        }
+      }
+    }
+    .title-Medium{
+      padding: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    .right-cards {
+      
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        background-color: #edf8f6;
+        padding: 15px;
+      .head {
+          display: grid;
+          .icon-name{
+              .icon{
+               
+                  img{
+                      width: 30px;
+                      margin-right: 10px;
+                      border-radius: 18px;
+                  }
+                
+              }
+              .name{
+                font-size: 12px;
+                margin-top: 10px;
+            }
+           
+          }
+          .description{
+            font-size: 14px;
+            font-weight: 600;
+        }
+         
+      }
+      .image-container{
+        .right-blog-img{
             img{
                 width: 40px;
-            }
-        }
-        .left-blog-links{
-            img{
-                width: 20px;
-                padding: 10px;
+                border-radius: 4px;
             }
         }
     }
-    .center-blog{
-        .center-blog-header{
-            display: flex;
-            justify-content: space-between;
-            
-            
-            .blog-header-left{
-                display: flex;
-                      .header-img{
-                    img{
-                        padding: 10px;
-                        width: 40px;
-
-                    }
-                   
-                }
-               
-            }
-            .header-title{
-                font-size: 10px;
-                padding: 10px;
-            }
-            .blog-header-right{
-                padding: 10px;
-                display: flex;
-                
-                .header-right-icons{
-                    img{
-                        width: 20px;
-                        padding: 10px;
-                    }
-                }
-            }
-           
-           
-           
-        }
-        .main-center-cantainer{
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
-            overflow-y: scroll;
-            height: 50%;
-          
-           
-            &::-webkit-scrollbar {
-                width:5px;
-               
-            }
-            &::-webkit-scrollbar {
-                width:5px;}
-            
-       
-            .title-desc{
-                line-height: 1.5;
-                margin-bottom: 30px;
-            }
-            .center-desc-main{
-               
-     
-               
-                .cntr-desc-img{
-                    img{
-                        width: 70vw;
-                     
-                    }
-                }
-                .center-desc{
-                    line-height: 1.5;
-                }
-            }
-        }
     }
-    .right-blog{
-        padding: 10px;
-        .search{
-           
-            input{
-                padding: 10px;
-               margin-left: 10px;
-                width: 70%;
-                border-radius: 15px;
-                outline: none;
-            
-            }
-        }
-        .right-img{
-           margin-top: 2rem;
-           padding-left: 16px;
-            img{
-                width: 80px;
-                height: 80px;
-                border-radius: 42px;
-            }
-        }
-        .right-title {
-            font-weight: 600;
-            padding-left: 24px;
-        }
-        .right-followers{
-            padding-left: 24px;
-            font-size: 13px;
 
-        }
-        .right-desc{
-            padding-left: 24px;
-            font-size: 15px;
-            margin-top: 10px;
 
-        }
-        .right-follow-button{
-            display: flex;
-            padding-left: 24px;
-            
-            margin-top: 10px;
-
-           
-            .follow-button{
-                padding: 5px;
-                margin-right: 20px;
-                background-color: green;
-                border-radius: 8px;
-                border: none;
-                &:hover{
-                cursor: pointer;
-                }
-            }
-            .follow-icon{
-                img{
-                    width: 25px;
-                }
-            }
-        }
-
-    }
+  }
 }
