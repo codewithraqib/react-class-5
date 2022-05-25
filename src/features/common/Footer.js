@@ -14,17 +14,17 @@ class Footer extends React.PureComponent {
   render() {
     return (
       <div className="footer-container  ">
-        <div className="footer-container-inner content-wrapper">
+        <div className="footer-container-inner  content-wrapper">
           {this.props.footerLinks.map(outerLink => {
             return (
               <div className="footer-item">
-                <div style={outerLink.head === true ? { fontSize: 20 } : {}}>{outerLink.name}</div>
-                {outerLink.subLinks &&
+                <div style={outerLink.head === true ? { fontSize: 20, fontWeight:600, marginBottom:10  } : {}}>{outerLink.name}</div>
+                {outerLink.subLinks && 
                   outerLink.subLinks.map(subLink => {
-                    return subLink.link ? (
-                      <div onClick={() => this.goToLink(subLink.link)}>{subLink.name}</div>
+                    return  subLink.link ? (
+                      <div className='footer-inner-item' onClick={() => this.goToLink(subLink.link)}>{subLink.name}</div>
                     ) : (
-                      <div className="without-link">{subLink.name}</div>
+                      <div className="without-link" >{subLink.name}</div>
                     );
                   })}
               </div>

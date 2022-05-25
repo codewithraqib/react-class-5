@@ -53,7 +53,7 @@ class App extends React.PureComponent {
           name: 'Contact us',
           head: true,
           subLinks: [
-            { id: 1, name: 'Map', link: 'map' },
+            { id: 1, name: 'contact us', link: 'ContactUs' },
             { id: 2, name: '9999899998' },
           ],
         },

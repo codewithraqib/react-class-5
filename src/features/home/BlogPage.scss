@@ -45,9 +45,10 @@
             background-color: #6c8cac;
             font-size: 2rem;
             line-height: 1.3125em;
-            
+        
             font-weight: 500;
             min-height: 230px;
+            transition: all 0.5s ease-in-out;
 
             
             .card-desc{
@@ -55,7 +56,7 @@
     
             }
             &:hover{
-                transition: all 0.13s ease-in-out;
+                transition: all 0.5s ease-in-out;
                 transform:  scale(1.03);
                 box-shadow:0.15s ease-in-out;
                 cursor: pointer;
