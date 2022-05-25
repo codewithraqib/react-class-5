@@ -38,4 +38,39 @@
 
     }
   }
+  .main-slider{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    opacity: 1;
+    .main-slider-text{
+      position: absolute;
+      top: 50%;
+      
+      font-size: 40px;
+      font-weight: 500;
+      color: white;
+    }
+  }
+ 
+  }
+  .overlay-img{
+    position: relative;
+    
+  
+     img{
+      max-height: 50%;
+      width: 100%;
+     
+
+     }
+     .overlay-img-text{
+       top: 50%;
+       color: #fff;
+        position: absolute;
+        left: 23%;
+        font-size: 40px;
+        font-weight: 500;
+      }
+ 
 }

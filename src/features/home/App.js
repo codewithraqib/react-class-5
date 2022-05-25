@@ -88,7 +88,7 @@ class App extends React.PureComponent {
 
         <Header
           myLinks={this.state.links}
-          logo={'/assets/images/logo.png'}
+          logo={'/assets/images/femmake-logo.jpg'}
           onNavClick={this.onNavItemClick}
 
           // somethihg={true}

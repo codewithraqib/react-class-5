@@ -1,11 +1,10 @@
 
 
 .nav-container {
-
-    display: grid;
-    grid-template-columns: 1fr 9fr;
-    padding: 20px;
-    background-color: aquamarine;
+    display: flex;
+ justify-content: center;
+ padding: 20px;
+  
 
     .logo-container {
         img {

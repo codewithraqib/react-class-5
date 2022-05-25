@@ -18,16 +18,9 @@ class Header extends React.PureComponent {
 
         <div className="links-container">
           <div className="links-container-inner">
-            {this.props.myLinks.map(val => {
-              return (
-                <span
-                  style={{ backgroundColor: val.active ? 'red' : '' }}
-                  onClick={() => this.props.onNavClick(val)}
-                >
-                  {val.name}
-                </span>
-              );
-            })}
+          
+             {/* HEADER-------------LINKS */}
+            
             {/* <span>Home</span>
             <span>About us</span>
             <span>Contact us</span> */}
