@@ -50,6 +50,13 @@ class WelcomePage extends React.PureComponent {
       SHOP FEMMAKE. BUY HANDMAKE.
       </div>
       </div>
+      <div className='product-main-cards'>
+        <div className='main-inner-card'>
+          <img src="/assets/images/clth.jpeg"/>
+          <div className='card-overlay-text'>Clothing</div>
+        </div>
+
+      </div>
     </div>
       
     );

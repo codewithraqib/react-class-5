@@ -52,6 +52,30 @@
       color: white;
     }
   }
+  .product-main-cards{
+    .main-inner-card{
+      transition: 1s;
+      position: relative;
+      img{
+        width: 40vw;
+        height: 60vh;
+      }
+      &:hover.main-inner-card{
+        transition: 1s;
+        transform: scale(1.5);
+        cursor: pointer;
+      }
+      .card-overlay-text{
+        position: absolute;
+        top: 50%;
+        left: 17%;
+        color: #fff;
+        font-size: 32px;
+        font-weight: 300;
+      }
+
+    }
+  }
  
   }
   .overlay-img{
@@ -72,5 +96,5 @@
         font-size: 40px;
         font-weight: 500;
       }
+    }
  
-}
