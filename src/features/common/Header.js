@@ -4,7 +4,18 @@ class Header extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      links: [
+        { id: 0, name: 'Home' },
+        { id: 1, name: 'Clothinng' },
+        { id: 2, name: 'Shawals' },
+        { id: 3, name: 'Home Decor' },
+        { id: 4, name: 'Skin Care' },
+        { id: 5, name: 'Bags and Accessories' },
+        { id: 6, name: 'Gallery' },
+        { id: 7, name: 'About us' },
+      ],
+    };
 
     console.log('Props in Header are----', this.props);
   }
@@ -18,9 +29,17 @@ class Header extends React.PureComponent {
 
         <div className="links-container">
           <div className="links-container-inner">
-          
-             {/* HEADER-------------LINKS */}
-            
+            {/* HEADER-------------LINKS */}
+
+            {this.state.links.map(link => {
+              return (
+                <div className="link-item">
+                  <span className="link-span">{link.name}</span>
+                  <span className="underline"></span>
+                </div>
+              );
+            })}
+
             {/* <span>Home</span>
             <span>About us</span>
             <span>Contact us</span> */}

@@ -3,9 +3,108 @@
     margin: 0px;
 }
 
+:root {
+    --primary-color: #ff8f45;
+    --secondary-color: #ff5c60;
+    --light-primary-color: #fef1ec;
+    --light-color: #f3f3f3;
+    --dark-color: #000;
+    --max-width: 1100px;
+    --border-color: #ddd;
+    --white-color: #fff;
+    --primary-text-color: #464647;
+}
+
+
+@font-face {
+    font-family: 'WorkSans-Light';
+    src: url('../fonts/WorkSans-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans-Regular';
+    src: url('../fonts/WorkSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans-SemiBold';
+    src: url('../fonts/WorkSans-SemiBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans-Bold';
+    src: url('../fonts/WorkSans-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans-Black';
+    src: url('../fonts/AvenirLTStd-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    line-height: 1;
+    background: var(--white-color);
+    font-size: 14pt;
+    font-weight: normal;
+    color: var(--primary-text-color);
+    font-family: 'WorkSans-Light', sans-serif !important;
+}
+
+.bold {
+    font-weight: normal;
+    font-family: 'AvenirNextLTPro-Bold', sans-serif;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+.primary-text {
+    color: var(--primary-color) !important;
+}
+
+.light-primary-text {
+    color: var(--light-primary-color) !important;
+}
+
+.secondary-text {
+    color: var(--secondary-color) !important;
+}
+
+.black-text {
+    font-weight: normal;
+    font-family: 'WorkSans-Black', sans-serif;
+}
+
+.light-text {
+    font-weight: normal;
+    font-family: 'WorkSans-Light', sans-serif;
+}
+
+.normal-text {
+    font-weight: normal;
+    font-family: 'WorkSans-Regular', sans-serif;
+}
+
+.bold-text {
+    font-weight: bold;
+    font-family: 'WorkSans-Bold', sans-serif;
+}
+
 
 .content-wrapper{
-    max-width: 80vw;
+    max-width: 70vw;
     margin: auto;
 }
 
@@ -42,4 +141,23 @@
     height: 1px;
     background-color: brown;
     margin-left: -2px;
+}
+
+
+.nav-container-flex{
+    display: flex;
+    padding: 14px 30px !important;
+    position: fixed;
+    background-color: white;
+    z-index: 1000;
+    width: 100%;
+    transition: all 300ms ease
+}
+
+.nav-container-flex .logo-container-flex{
+    margin-bottom: 0px !important;
+    transition: all 300ms ease
+}
+.nav-container-flex .logo-container-flex img{
+    height: 35px !important;
 }

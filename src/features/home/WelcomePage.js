@@ -24,7 +24,7 @@ class WelcomePage extends React.PureComponent {
       <div className="home-welcome-page">
         <div className="main-slider">
           <SimpleImageSlider
-            width={1264}
+            width={'100%'}
             height={600}
             images={this.state.images}
             showBullets={false}
@@ -32,11 +32,16 @@ class WelcomePage extends React.PureComponent {
             autoPlay
             slideDuration={2}
           />
-          <div className="main-slider-text">SHOP FEMMAKE. BUY HANDMAKE.</div>
+          <div className="main-slider-text">
+            <span className="normal-text primary-text">SHOP FEMMAKE. BUY HANDMAKE.</span>
+          </div>
         </div>
-        <div className="overlay-img content-wrapper ">
-          <img src="/assets/images/18128.jpg" />
-          <div className="overlay-img-text">SHOP FEMMAKE. BUY HANDMAKE.</div>
+
+        <div className="overlay-img brand-tag content-wrapper ">
+          <img src="/assets/images/18128.jpg" alt="" />
+          <div className="overlay-img-text">
+            <span className="light-text">EMPOWER FEMALE IN DEVELOPING COUNTRIES</span>
+          </div>
         </div>
 
         <div className="product-main-cards content-wrapper">
@@ -64,13 +69,15 @@ class WelcomePage extends React.PureComponent {
         </div>
 
         <div className="vision-container content-wrapper">
-          <div className="vision-title">Mission and Vision</div>
+          <div className="vision-title">
+            <h2>Mission and Vision</h2>
+          </div>
           <div className="vision-main-cards">
             <div className="vision-innr-card">
               <div className="vision-img">
                 <img src="/assets/images/Economic.png" />
               </div>
-              <div className="vision-desc-title">ECONOMIC SECURITY</div>
+              <div className="vision-desc-title bold-text">ECONOMIC SECURITY</div>
               <div className="vision-desc">
                 Ensure Financial Stability for Female in Developing Countries
               </div>
@@ -80,7 +87,7 @@ class WelcomePage extends React.PureComponent {
               <div className="vision-img">
                 <img src="/assets/images/Heart.png" />
               </div>
-              <div className="vision-desc-title">ETHICAL PURCHASE</div>
+              <div className="vision-desc-title bold-text">ETHICAL PURCHASE</div>
               <div className="vision-desc">Encourage Customers To Make Ethical Buying Decision</div>
             </div>
 
@@ -88,7 +95,7 @@ class WelcomePage extends React.PureComponent {
               <div className="vision-img">
                 <img src="/assets/images/EnpowerWomen.png" />
               </div>
-              <div className="vision-desc-title">EMPOWER WOMEN</div>
+              <div className="vision-desc-title bold-text">EMPOWER WOMEN</div>
               <div className="vision-desc">Sharpen the skill set of Female Artisans Worldwide</div>
             </div>
           </div>
@@ -98,65 +105,59 @@ class WelcomePage extends React.PureComponent {
           <div className="thank-main-desc">
             <div className="thank-title">Thank you card from artisan</div>
             <div className="thank-desc">
-            Your purchase can contribute to the artisans’ livelihoods. A card with a meaningful message handwritten by Female Artisan will be included in your delivery
+              Your purchase can contribute to the artisans’ livelihoods. A card with a meaningful
+              message handwritten by Female Artisan will be included in your delivery
             </div>
           </div>
 
-          <div className='thank-overlay-container'>
-            <div className='thank-overlay-img'>
-            <img src="/assets/images/thank.jpeg" />
+          <div className="thank-overlay-container">
+            <div className="thank-overlay-img">
+              <img src="/assets/images/thank.jpeg" />
             </div>
 
-            <div className='thank-overlay-img-2'>
-            <img src="/assets/images/Thankcard.jpg" />
+            <div className="thank-overlay-img-2">
+              <img src="/assets/images/Thankcard.jpg" />
             </div>
 
-            <div className='thank-overlay-img-3'>
-            <img src="/assets/images/hand-weaving.jpg" />
+            <div className="thank-overlay-img-3">
+              <img src="/assets/images/hand-weaving.jpg" />
             </div>
-
           </div>
         </div>
-        
 
-        <div className='main-link-youtube'>
+        <div className="main-link-youtube">
           <span>
-          <iframe
-        src="https://www.youtube.com/embed/E7wJTI-1dvQ"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        title="video"
-        width={600}
-        height={400}
-      />
+            <iframe
+              src="https://www.youtube.com/embed/E7wJTI-1dvQ"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              title="video"
+              width={600}
+              height={400}
+            />
           </span>
         </div>
 
-
-        <div className='artisans-container content-wrapper'>
-          <div className='art-title'>OUR ARTISANS</div>
-          <div className='artisan-main-cards'>
-            <div className='artisan-pics'>
-            <img src="/assets/images/Picture2.png" />
+        <div className="artisans-container content-wrapper">
+          <div className="art-title">OUR ARTISANS</div>
+          <div className="artisan-main-cards">
+            <div className="artisan-pics">
+              <img src="/assets/images/Picture2.png" />
             </div>
 
-            <div className='artisan-pics'>
-            <img src="/assets/images/Picture8.png" />
+            <div className="artisan-pics">
+              <img src="/assets/images/Picture8.png" />
             </div>
 
-            <div className='artisan-pics'>
-            <img src="/assets/images/Picture11.png" />
+            <div className="artisan-pics">
+              <img src="/assets/images/Picture11.png" />
             </div>
 
-            <div className='artisan-pics'>
-            <img src="/assets/images/Picture10.png" />
+            <div className="artisan-pics">
+              <img src="/assets/images/Picture10.png" />
             </div>
-
-
-
           </div>
-
         </div>
       </div>
     );

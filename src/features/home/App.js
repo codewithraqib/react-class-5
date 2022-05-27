@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import  ContactUs  from '../common/ContactUs';
+import ContactUs from '../common/ContactUs';
 
 // export default function App({ children }) {
 //   return (
@@ -62,6 +62,29 @@ class App extends React.PureComponent {
     };
   }
 
+  componentDidMount() {
+    this.scroll();
+  }
+
+  scroll = () => {
+    window.addEventListener('scroll', event => {
+      var scroll = event.currentTarget.scrollY;
+      var menu = window.document.querySelector('.nav-container');
+      var logoContainer = window.document.querySelector('.logo-container');
+      console.log('Menu is----', menu);
+      if (menu) {
+        if (scroll > 100) {
+          menu.className = 'nav-container nav-container-flex';
+          logoContainer.className = 'logo-container logo-container-flex';
+        }
+        if (scroll < 90) {
+          menu.className = 'nav-container';
+          logoContainer.className = 'logo-container';
+        }
+      }
+    });
+  };
+
   onNavItemClick = val => {
     // console.log('nav item Clicked in APP.js', val);
 
@@ -95,7 +118,7 @@ class App extends React.PureComponent {
           // myName="raqib"
         />
         <div className="page-container">{this.props.children}</div>
-       
+
         <Footer history={this.props.history} footerLinks={this.state.footerLinks} />
       </div>
     );
