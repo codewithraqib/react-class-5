@@ -19,6 +19,10 @@ class WelcomePage extends React.PureComponent {
     console.log('Props in wellcomePage are----', this.props);
   }
 
+  goToShop = () => {
+    this.props.history.push('shop');
+  };
+
   render() {
     return (
       <div className="home-welcome-page">
@@ -30,10 +34,10 @@ class WelcomePage extends React.PureComponent {
             showBullets={false}
             showNavs={false}
             autoPlay
-            slideDuration={2}
+            slideDuration={3}
           />
           <div className="main-slider-text">
-            <span className="normal-text primary-text">SHOP FEMMAKE. BUY HANDMAKE.</span>
+            <span className="normal-text">SHOP FEMMAKE. BUY HANDMAKE.</span>
           </div>
         </div>
 
@@ -46,22 +50,22 @@ class WelcomePage extends React.PureComponent {
 
         <div className="product-main-cards content-wrapper">
           <div className="overlay-product-cards">
-            <div className="main-cloth-card showcase-item">
+            <div className="main-cloth-card showcase-item" onClick={this.goToShop}>
               <img src="/assets/images/clth.jpeg" />
               <div className="card-overlay-text">Clothing</div>
             </div>
 
-            <div className="main-shawl-card showcase-item">
+            <div className="main-shawl-card showcase-item" onClick={this.goToShop}>
               <img src="/assets/images/shwl.jpeg" />
               <div className="card-overlay-text">Shawl</div>
             </div>
 
-            <div className="main-sales-card showcase-item">
+            <div className="main-sales-card showcase-item" onClick={this.goToShop}>
               <img src="/assets/images/sales.jpeg" />
               <div className="card-overlay-text">Bags and Accessories</div>
             </div>
 
-            <div className="main-decor-card showcase-item">
+            <div className="main-decor-card showcase-item" onClick={this.goToShop}>
               <img src="/assets/images/rugs.png" />
               <div className="card-overlay-text">Home Decor</div>
             </div>

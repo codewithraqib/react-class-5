@@ -76,10 +76,16 @@ class App extends React.PureComponent {
         if (scroll > 100) {
           menu.className = 'nav-container nav-container-flex';
           logoContainer.className = 'logo-container logo-container-flex';
+          // window.screenY = 110;
+          // window.scrollY = 200;
+          // window.scrollTo(0, 150);
         }
-        if (scroll < 90) {
-          menu.className = 'nav-container';
-          logoContainer.className = 'logo-container';
+
+        if (scroll < 70) {
+          setTimeout(() => {
+            menu.className = 'nav-container';
+            logoContainer.className = 'logo-container';
+          }, 200);
         }
       }
     });

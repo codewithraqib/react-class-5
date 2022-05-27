@@ -59,6 +59,7 @@ body {
     font-weight: normal;
     color: var(--primary-text-color);
     font-family: 'WorkSans-Light', sans-serif !important;
+    scroll-behavior: smooth;
 }
 
 .bold {

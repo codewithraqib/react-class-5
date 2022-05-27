@@ -29,8 +29,6 @@ class Header extends React.PureComponent {
 
         <div className="links-container">
           <div className="links-container-inner">
-            {/* HEADER-------------LINKS */}
-
             {this.state.links.map(link => {
               return (
                 <div className="link-item">
@@ -39,10 +37,6 @@ class Header extends React.PureComponent {
                 </div>
               );
             })}
-
-            {/* <span>Home</span>
-            <span>About us</span>
-            <span>Contact us</span> */}
           </div>
         </div>
       </div>
