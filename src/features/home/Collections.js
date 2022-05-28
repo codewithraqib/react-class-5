@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+
+
 class Collections extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -19,6 +22,8 @@ class Collections extends React.PureComponent {
           <div className="product-container">
             <div className="product-cards">
               <div className="show-main-desc">
+
+
                 <div>Showing 1–12 of 68 results</div>
                 <div className="sorting-btn">
                   <select name="sorting" id="sorting">
@@ -35,7 +40,7 @@ class Collections extends React.PureComponent {
                   <div className="card-img">
                     <img src="/assets/images/IMG7.jpg" />
                     <div className="cart-overlay-btn">
-                      <span>+</span>
+                      <span className='cart-plus'>+</span>
                     </div>
                   </div>
 
@@ -47,7 +52,7 @@ class Collections extends React.PureComponent {
                   <div className="card-img">
                     <img src="/assets/images/IMG8.jpg" />
                     <div className="cart-overlay-btn">
-                    <span>+</span>
+                    <span className='cart-plus'>+</span>
                     </div>
                   </div>
                   <div className="card-title">CARDTITLE</div>
@@ -58,7 +63,7 @@ class Collections extends React.PureComponent {
                   <div className="card-img">
                     <img src="/assets/images/IMG6.jpg" />
                     <div className="cart-overlay-btn">
-                      <span>+</span>
+                      <span className='cart-plus'>+</span>
                     </div>
                   </div>
                   <div className="card-title">CARDTITLE</div>
