@@ -81,12 +81,12 @@ class App extends React.PureComponent {
           // window.scrollTo(0, 150);
         }
 
-        if (scroll < 70) {
-          setTimeout(() => {
-            menu.className = 'nav-container';
-            logoContainer.className = 'logo-container';
-          }, 200);
-        }
+        // if (scroll < 70) {
+        //   setTimeout(() => {
+        //     menu.className = 'nav-container';
+        //     logoContainer.className = 'logo-container';
+        //   }, 200);
+        // }
       }
     });
   };
