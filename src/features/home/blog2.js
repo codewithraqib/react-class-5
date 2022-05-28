@@ -119,15 +119,14 @@ class Blog2 extends React.PureComponent {
         src={`https://youtube.com/embed/t0Q2otsqC4I?autoplay=0`}>
         
 </iframe> */}
-               
               </div>
               I’ve written before in this space about the brain-dulling effect of an overly
-                routinized life. The novelist Rachel Cusk put a finer point on it when she wrote
-                that “habits kill what is essential in ourselves.” If you’re feeling worn out by the
-                stuff going on in your head, that’s a sure sign you need to change its inputs — give
-                your mind something new to chew on so that it stops chewing on itself.
-                <br />
-                Here, the research on vacations can be instructive.
+              routinized life. The novelist Rachel Cusk put a finer point on it when she wrote that
+              “habits kill what is essential in ourselves.” If you’re feeling worn out by the stuff
+              going on in your head, that’s a sure sign you need to change its inputs — give your
+              mind something new to chew on so that it stops chewing on itself.
+              <br />
+              Here, the research on vacations can be instructive.
             </div>
 
             <div className="center-blog-card">
@@ -141,19 +140,18 @@ class Blog2 extends React.PureComponent {
                   </div>
                 </div>
                 <div className="title"> This day in history</div>
-                <div className='title-history'>
-                Potter had already been paying the higher price for some time, shoveling money into monopolists’ gaping maws.
+                <div className="title-history">
+                  Potter had already been paying the higher price for some time, shoveling money
+                  into monopolists’ gaping maws.
                 </div>
-                <div className='cntr-card-share'>
-                  <div className='time-read'>
-                    <div className='time-desc'>This day in history</div>
-                    <div className='read-time'> 4 min read</div>
-
+                <div className="cntr-card-share">
+                  <div className="time-read">
+                    <div className="time-desc">This day in history</div>
+                    <div className="read-time"> 4 min read</div>
                   </div>
-                  <div className='share-icon'> 
-                  <img src="/assets/images/share.png" alt="" />
+                  <div className="share-icon">
+                    <img src="/assets/images/share.png" alt="" />
                   </div>
-
                 </div>
               </div>
               <div className="cntr-blog-img">
@@ -264,5 +262,4 @@ class Blog2 extends React.PureComponent {
     );
   }
 }
-
 export default Blog2;
