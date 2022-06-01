@@ -7,3 +7,4 @@ export { default as ServicesCard } from './ServicesCard';
 export { default as TeamCard } from './TeamCard';   
 export { default as ProjectCard } from './ProjectCard';
 export { default as ContactUs } from './ContactUs';
+export { default as SideMenu } from './SideMenu';

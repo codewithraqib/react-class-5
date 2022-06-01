@@ -5,6 +5,7 @@ class Blog2 extends React.PureComponent {
     return (
       <div className="blog2-main-container">
         <div className="left-blog">
+        
           <div className="blog1-logo">
             <img src="/assets/images/logo.png" alt="" />
           </div>
@@ -29,8 +30,11 @@ class Blog2 extends React.PureComponent {
 
         <div className="center-blog">
           <div className="center-blog-header">
+         
             <div className="blog-header-left">
               <div className="header-img">
+           
+      
                 <img src="/assets/images/logo.png" alt="" />
               </div>
               <div className="header-title">
@@ -258,6 +262,55 @@ class Blog2 extends React.PureComponent {
             </div>
           </div>
         </div>
+        {/* humbergur */}
+        <div class="center">
+          <div></div>
+        </div>
+
+        <div>
+        {/* <!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        --> */}
+<nav role="navigation">
+  <div id="menuToggle">
+    {/* <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    --> */}
+    <input type="checkbox" />
+{/*     
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    --> */}
+    <span></span>
+    <span></span>
+    <span></span>
+{/*     
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    --> */}
+    <ul id="menu">
+      <a href="#"><li>Home</li></a>
+      <a href="#"><li>About</li></a>
+      <a href="#"><li>Info</li></a>
+      <a href="#"><li>Contact</li></a>
+      <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+    </ul>
+  </div>
+</nav>
+        </div>
+        <div className='parallax'>
+          
+          </div>
+          <div className='para-img'>
+          {/* <img src="/assets/images/mss.jpg" alt="" /> */}
+
+        </div>
+
       </div>
     );
   }

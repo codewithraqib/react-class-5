@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import { SideMenu } from '../common';
 import  ContactUs  from '../common/ContactUs';
 
 // export default function App({ children }) {
@@ -94,6 +95,7 @@ class App extends React.PureComponent {
           // somethihg={true}
           // myName="raqib"
         />
+        <SideMenu/>
         <div className="page-container">{this.props.children}</div>
        
         <Footer history={this.props.history} footerLinks={this.state.footerLinks} />
