@@ -8,9 +8,17 @@
     background-color: aquamarine;
 
     .logo-container {
+        display: flex;
+    justify-content: space-between;
+
         img {
             height: 60px;
 
+        }
+        .logo-text{
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: 400;
         }
     }
 

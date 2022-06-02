@@ -3,7 +3,7 @@ import React from 'react';
 class SideMenu extends React.PureComponent {
   render() {
     return (
-      <nav role="navigation">
+      <div className='navigation'>
         <div id="menuToggle">
           <input type="checkbox" />
           
@@ -26,7 +26,7 @@ class SideMenu extends React.PureComponent {
            
           </ul>
         </div>
-      </nav>
+      </div>
     );
   }
 }

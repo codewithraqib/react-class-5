@@ -13,7 +13,14 @@ class Header extends React.PureComponent {
     return (
       <div className="nav-container">
         <div className="logo-container">
-          <img src={this.props.logo} alt="logo" />
+          <div className='idps-logo'><img src={this.props.logo} alt="logo" />
+          </div>
+          
+          <div className='logo-text'>
+          <span>INTERNATIONAL
+DELHI PUBLIC SCHOOL</span>
+</div>
+        
         </div>
 
         <div className="links-container">
