@@ -1,41 +1,181 @@
 @import '../../styles/mixins';
 
 .home-welcome-page {
+  //asgulFS YIWGE
+  .glance-conatainer {
+    .inner-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: auto;
+      height: 100%;
 
-  // background-color: red;
+      .overlay-cards {
+        position: relative;
+        height: 230px;
+        width: 100%;
+        // grid-column: 1 / span 2;
+        &:nth-child(2) {
+          grid-column: 2 / span 3;
+          // grid-row: / span 3;
+        }
 
-  .nav-container{
+        .glance-img {
+          height: 100%;
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .overlay-text {
+          position: absolute;
+          align-items: center;
+          top: 50%;
+          left: 40%;
+          // opacity: 1;
 
-    display: grid;
-    grid-template-columns: 1fr 9fr;
-    padding: 20px;
-    background-color: aquamarine;
-    
-    .logo-container{
-      img{
-        height: 60px;
-        
+          // &:hover{
+          //   opacity: 1;
+          //   color: #fff;
+          // }
+        }
       }
     }
+  }
 
-    .links-container{
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+  .contact-notification-container {
+    display: grid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    grid-template-columns: 4fr 6fr;
+    gap: 20px;
+    
+    .contact-view-card {
+      background-color: #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      .location-map{
 
-      .links-container-inner{
-        span{
-          padding: 10px;
-          margin: 0 10px;
-          background-color: beige;
-          border-radius: 8px;
-
-          &:hover{
-            cursor: pointer;
+        margin: 10px 10px 10px 0px;
+        border-bottom: dotted 1px ;
+      
+        .map-icon{
+       
+          img{
+            height: 20px;
           }
         }
       }
+      .mail-icon{
+        margin: 10px 10px 10px 0px;
+        border-bottom: dotted 1px ;
+        img{
+          height: 20px;
+        
+        }
+        .mail-address{
+          margin-left: 5px;
+        }
+      }
+      .phone-icon{
+        margin: 10px 10px 50px 0px;
 
+        img{
+          height: 20px;
+        }
+      }
+    }
+    .notifications-card {
+      background-color: #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+
+   
+      overflow: hidden;
+      
+      .scroll-notification{
+        height: 200px;
+
+      }
+      .notification{
+       
+        padding:6px; 
+        margin-bottom: 10px;
+      border-radius: 8px;
+        box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+       &:hover{
+         cursor:pointer ;
+         color: rgb(134, 49, 49);
+       }
+      }
+
+      .notification-title{
+        // display: flex;
+        // justify-content: end;
+        // text-align: end;
+        position: absolute;
+        bottom: 10px;
+      }
+    }
+  }
+  .premier-container{
+    .preimer-title{
+      background: -webkit-linear-gradient(top, #d90429, #264653);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      display: flex;
+      font-weight: bold;
+      font-size: 25px;
+      display: flex; 
+      margin-bottom: 20px;
+    }
+    .premier-main-cards{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      text-align: center;
+      .premier-card{
+        .card-gift{
+          img{
+            height: 24vh;
+          }
+        }
+        .premier-name{
+          margin:10px ;
+        }
+        .premier-desc{
+          margin-bottom: 20px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  .trending-container {
+    .trend-tiltle{
+      color: rgb(172, 45, 45);
+      font-weight: bold;
+      font-size: 25px;
+      display: flex; 
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .trend-main-card{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      text-align: center;
+      .trend-inner{
+        margin-bottom: 20px;
+        .social-img{
+          
+          img{
+            height: 30px;
+          }
+        }
+      }
     }
   }
 }
