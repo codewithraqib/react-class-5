@@ -120,7 +120,7 @@
     }
   }
   .premier-container{
-    .preimer-title{
+    .idps-title{
       background: -webkit-linear-gradient(top, #d90429, #264653);
       background-clip: text;
       -webkit-background-clip: text;
@@ -138,10 +138,15 @@
       gap: 30px;
       text-align: center;
       .premier-card{
+        
         .card-gift{
+          display: flex;
+        justify-content: center;
+        height: 24vh;
           img{
             height: 24vh;
           }
+          
         }
         .premier-name{
           margin:10px ;

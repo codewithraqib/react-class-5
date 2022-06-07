@@ -1,9 +1,9 @@
 import React from 'react';
 import { AboutUs, ContactUs } from '../common';
-import Header from '../common/Header';
-import AwesomeSlider from 'react-awesome-slider';
+import Lottie from 'react-lottie-player';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import SimpleImageSlider from 'react-simple-image-slider';
+import lottieJson from '../../Lottie.json';
 
 class WelcomePage extends React.PureComponent {
   constructor(props) {
@@ -43,6 +43,7 @@ class WelcomePage extends React.PureComponent {
           <div className="inner-container">
             <div className="overlay-cards">
               <div className="glance-img">
+                
                 <img src="/assets/images/dow.jpg" alt="" />
               </div>
               <div className="overlay-text">
@@ -132,11 +133,11 @@ class WelcomePage extends React.PureComponent {
         </div>
 
         <div className="premier-container content-wrapper">
-          <div className="preimer-title">IDPS PREIMER</div>
+          <div className="idps-title">IDPS PREIMER</div>
           <div className="premier-main-cards">
             <div className="premier-card">
               <div className="card-gift">
-                <img src="/assets/images/idps.png" alt="" />
+                <Lottie loop animationData={lottieJson} play style={{ width: 150, height: 150 }} />
               </div>
               <div className="premier-name">
                 <span> About School</span>
@@ -153,7 +154,7 @@ class WelcomePage extends React.PureComponent {
 
             <div className="premier-card">
               <div className="card-gift">
-                <img src="/assets/images/idps.png" alt="" />
+                <img src="/assets/images/school.gif" alt="" />
               </div>
               <div className="premier-name">
                 <span> About School</span>
@@ -170,7 +171,7 @@ class WelcomePage extends React.PureComponent {
 
             <div className="premier-card">
               <div className="card-gift">
-                <img src="/assets/images/idps.png" alt="" />
+                <Lottie loop animationData={lottieJson} play style={{ width: 150, height: 150 }} />
               </div>
               <div className="premier-name">
                 <span> About School</span>
@@ -188,65 +189,62 @@ class WelcomePage extends React.PureComponent {
         </div>
 
         <div className="trending-container content-wrapper">
-          <div className='trend-tiltle'>
-          Trending at IDPS
-          </div>
+          <div className="trend-tiltle  idps-title">Trending at IDPS</div>
 
-          <div className='trend-main-card'>
-            <div className='trend-inner'>
-            <div className="social-img">
+          <div className="trend-main-card">
+            <div className="trend-inner">
+              <div className="social-img">
                 <img src="/assets/images/facebook.png" alt="" />
               </div>
-              <div className='social-view'>
-              <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FIdpssrinagar%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-               width={340}
-                height={500}
-                 border="none"
-                 overflow="hidden"
-                 scrolling="no" 
-                frameborder="0"
-                 allowfullscreen="true"
-                 allow="autoplay;
+              <div className="social-view">
+                <iframe
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FIdpssrinagar%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                  width={340}
+                  height={500}
+                  border="none"
+                  overflow="hidden"
+                  scrolling="no"
+                  frameborder="0"
+                  allowfullscreen="true"
+                  allow="autoplay;
                encrypted-media; picture-in-picture; "
-               >
-
-               </iframe>
+                ></iframe>
               </div>
             </div>
-            
-            <div className='trend-inner'>
-            <div className="social-img">
+
+            <div className="trend-inner">
+              <div className="social-img">
                 <img src="/assets/images/instagram.png" alt="" />
               </div>
-              <div className='social-view'>
-              <iframe src="https://www.instagram.com/bhat__ashu/embed"
-              width={300} 
-              height={500}
-              frameborder="0"
-               scrolling="no" allowtransparency="true"></iframe>
-
-               
+              <div className="social-view">
+                <iframe
+                  src="https://www.instagram.com/bhat__ashu/embed"
+                  width={300}
+                  height={500}
+                  frameborder="0"
+                  scrolling="no"
+                  allowtransparency="true"
+                ></iframe>
               </div>
             </div>
 
-            <div className='trend-inner'>
-            <div className="social-img">
+            <div className="trend-inner">
+              <div className="social-img">
                 <img src="/assets/images/twitter.png" alt="" />
               </div>
-              <div className='social-view'>
-              <iframe 
-              border="none"
-               height={500}
-               width={340}
-               data-tweet-url="https://twitter.com/IdpsSrinagar" 
-              src="data:text/html;charset=utf-8,%3Ca%20class%3D%22twitter-timeline%22%20href%3D%22https%3A//twitter.com/IdpsSrinagar%3Fref_src%3Dtwsrc%255Etfw%22%3ETweets%20by%20IdpsSrinagar%3C/a%3E%0A%3Cscript%20async%20src%3D%22https%3A//platform.twitter.com/widgets.js%22%20charset%3D%22utf-8%22%3E%3C/script%3E%0A"></iframe>
-             
+              <div className="social-view">
+                <iframe
+                  border="none"
+                  height={500}
+                  width={340}
+                  data-tweet-url="https://twitter.com/IdpsSrinagar"
+                  src="data:text/html;charset=utf-8,%3Ca%20class%3D%22twitter-timeline%22%20href%3D%22https%3A//twitter.com/IdpsSrinagar%3Fref_src%3Dtwsrc%255Etfw%22%3ETweets%20by%20IdpsSrinagar%3C/a%3E%0A%3Cscript%20async%20src%3D%22https%3A//platform.twitter.com/widgets.js%22%20charset%3D%22utf-8%22%3E%3C/script%3E%0A"
+                ></iframe>
               </div>
             </div>
-       
-
           </div>
         </div>
+        <div></div>
       </div>
     );
   }
