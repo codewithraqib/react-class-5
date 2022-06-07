@@ -91,11 +91,8 @@ class App extends React.PureComponent {
           myLinks={this.state.links}
           logo={'/assets/images/logo.png'}
           onNavClick={this.onNavItemClick}
-
-          // somethihg={true}
-          // myName="raqib"
         />
-        <SideMenu/>
+        {/* <SideMenu/> */}
         <div className="page-container">{this.props.children}</div>
        
         <Footer history={this.props.history} footerLinks={this.state.footerLinks} />
