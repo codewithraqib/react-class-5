@@ -408,7 +408,7 @@ class WelcomePage extends React.PureComponent {
             </div>
             <div className="left-hero-side">
               <div className='arrow-container'>
-                <div className="leftarrow"  onClick={() => this.changeSlides()}>
+                <div className="leftarrow" >
                   <img src="/assets/images/lftarrow.png"  />
                 </div>
                 <div className="dots">{this.renderDots()}</div>
