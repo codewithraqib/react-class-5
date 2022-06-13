@@ -3,8 +3,8 @@ import { AboutUs, ContactUs } from '../common';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 // import Box from '@mui/material/Box';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import 'react-tabs/style/react-tabs.css';
 
 class WelcomePage extends React.PureComponent {
   constructor(props) {
@@ -214,12 +214,12 @@ class WelcomePage extends React.PureComponent {
     return (
       <div className="news-chunk-container">
         <img src={val.img} />
-        <div className='news-desc-container'>
+        <div className="news-desc-container">
           <div>{val.title}</div>
 
-          <div className='news-text' >
+          <div className="news-text">
             <span>{val.name}</span>
-            <span className='news-date'>{val.date}</span>
+            <span className="news-date">{val.date}</span>
           </div>
         </div>
       </div>
@@ -232,9 +232,6 @@ class WelcomePage extends React.PureComponent {
       return <div className={val[4] ? 'dot active' : 'dot'}></div>;
     });
   };
- 
- 
-
 
   render() {
     return (
@@ -407,9 +404,9 @@ class WelcomePage extends React.PureComponent {
               </div>
             </div>
             <div className="left-hero-side">
-              <div className='arrow-container'>
-                <div className="leftarrow" >
-                  <img src="/assets/images/lftarrow.png"  />
+              <div className="arrow-container">
+                <div className="leftarrow" onClick={() => this.changeSlides()}>
+                  <img src="/assets/images/lftarrow.png" />
                 </div>
                 <div className="dots">{this.renderDots()}</div>
                 <div className="rightarrow">
