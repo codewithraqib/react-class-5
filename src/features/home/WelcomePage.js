@@ -167,7 +167,7 @@ class WelcomePage extends React.PureComponent {
 
     setTimeout(() => {
       this.setState({ rightSlides: newSlides });
-    }, 1000);
+    }, 500);
   };
   componentDidMount() {
     this.setState({ currentData: this.state.tabData[0].tabData });
