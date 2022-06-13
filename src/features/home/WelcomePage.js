@@ -29,7 +29,7 @@ class WelcomePage extends React.PureComponent {
         <div className="main-slider">
           <SimpleImageSlider
             width={'100%'}
-            height={600}
+            height={'85vh'}
             images={this.state.images}
             showBullets={false}
             showNavs={false}

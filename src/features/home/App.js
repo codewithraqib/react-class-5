@@ -119,6 +119,7 @@ class App extends React.PureComponent {
           myLinks={this.state.links}
           logo={'/assets/images/femmake-logo.jpg'}
           onNavClick={this.onNavItemClick}
+          onLogoClick={() => this.props.history.push('/')}
 
           // somethihg={true}
           // myName="raqib"

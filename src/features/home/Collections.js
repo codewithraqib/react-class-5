@@ -9,6 +9,10 @@ class Collections extends React.PureComponent {
     console.log('Props in collection are----', this.props);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="collection-container ">

@@ -178,10 +178,14 @@ body {
     width: 4px;
     z-index: 100;
     background: #000;
+    outline: none;
     /* border: 5px solid #3774ff; */
     /* border-radius: 100%; */
     display: block;
     /* box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%); */
+}
+.example-thumb:focus{
+    outline: none;
 }
 
 .example-thumb.active {
