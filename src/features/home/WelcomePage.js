@@ -79,77 +79,102 @@ class WelcomePage extends React.PureComponent {
             name: 'json',
             date: '1/03/444',
           },
-          true,
+          // { active: false },
         ],
         [
           {
             id: 0,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '2 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
           {
             id: 1,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '2 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
           {
             id: 2,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: ' 2How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
           {
             id: 3,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '2 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
-          false,
+          // { active: false },
         ],
         [
           {
             id: 0,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '3 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
           {
             id: 1,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '3 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
           {
             id: 2,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '3 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
           {
             id: 3,
             img: '/assets/images/ricardou.jpg',
-            title: 'How Did van Gogh’s Turbulent Mind',
+            title: '3 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
           },
-          false,
+
+          // { active: true },
         ],
       ],
       currentData: null,
       currentSelectedArray: 0,
     };
+
+    this.setupSlides();
   }
+
+  setupSlides = () => {
+    let newSlides = [];
+
+    this.state.rightSlides.map((slide, index) => {
+      if (index === 0) {
+        newSlides.push({ ...slide, active: true });
+      } else {
+        newSlides.push({ ...slide, active: false });
+      }
+    });
+
+    console.log('Right slide after change----', newSlides);
+
+    setTimeout(() => {
+      this.setState({ rightSlides: newSlides });
+    }, 1000);
+  };
   componentDidMount() {
     this.setState({ currentData: this.state.tabData[0].tabData });
+
+    setTimeout(() => {
+      console.log('Right slide in component did mount----', this.state.rightSlides);
+    }, 3000);
   }
 
   onTabClick = tab => {
@@ -182,35 +207,8 @@ class WelcomePage extends React.PureComponent {
     this.props.history.push('shop');
   };
 
-  // changeTab = index => {
-  //   let newTabs = [];
-
-  //   this.state.tabs.map(val => {
-  //     if (val.id === index) {
-  //       newTabs.push({ ...val, active: true });
-  //     } else {
-  //       newTabs.push({ ...val, active: false });
-  //     }
-  //   });
-
-  //   this.setState({ tabs: newTabs });
-  // };
-
-  // singleTab = (tab, index) => {
-  //   return (
-  //     <div
-  //       style={tab.active ? { backgroundColor: '#FFFFFF' } : { backgroundColor: '#EDEDED' }}
-  //       key={index}
-  //       className="tab"
-  //       onClick={() => this.changeTab(index)}
-  //     >
-  //       <span>{tab.name}</span>
-  //     </div>
-  //   );
-  // };
-  // slid
-
   renderNewsChunk = val => {
+    console.log('testing news chunk is----', val);
     return (
       <div className="news-chunk-container">
         <img src={val.img} />
@@ -229,8 +227,50 @@ class WelcomePage extends React.PureComponent {
   renderDots = () => {
     return this.state.rightSlides.map(val => {
       console.log({ val });
-      return <div className={val[4] ? 'dot active' : 'dot'}></div>;
+      return <div className={val.active ? 'dot active' : 'dot'}></div>;
     });
+  };
+
+  changeSlides = direction => {
+    let newSlides = [];
+
+    let position = 0;
+
+    this.state.rightSlides.map((rightSlide, index) => {
+      console.log('Rifght slide is----', rightSlide);
+
+      if (rightSlide.active == true) {
+        if (direction == 'right') {
+          console.log('POSITIOON BEFORE STARTING LOGIC---', position);
+          if (index == 2) {
+            position = 0;
+          } else {
+            console.log('indside right else');
+            position = index + 1;
+          }
+        } else {
+          if (index == 0) {
+            position = 2;
+          } else {
+            position = index - 1;
+          }
+        }
+      }
+    });
+
+    console.log('posiotn is--', position);
+
+    this.state.rightSlides.map((slide, index) => {
+      if (index == position) {
+        newSlides.push({ ...slide, active: true });
+      } else {
+        newSlides.push({ ...slide, active: false });
+      }
+    });
+
+    console.log('right slides formed----', newSlides);
+
+    this.setState({ rightSlides: newSlides });
   };
 
   render() {
@@ -405,18 +445,50 @@ class WelcomePage extends React.PureComponent {
             </div>
             <div className="left-hero-side">
               <div className="arrow-container">
-                <div className="leftarrow" onClick={() => this.changeSlides()}>
-                  <img src="/assets/images/lftarrow.png" />
+                <div className="leftarrow" onClick={() => this.changeSlides('left')}>
+                  <img src="/assets/images/lftarrow.png" alt="" />
                 </div>
                 <div className="dots">{this.renderDots()}</div>
-                <div className="rightarrow">
-                  <img src="/assets/images/forward.png" />{' '}
+                <div className="rightarrow" onClick={() => this.changeSlides('right')}>
+                  <img src="/assets/images/forward.png" alt="" />
                 </div>
               </div>
 
-              {this.state.rightSlides[this.state.currentSelectedArray].map((val, index) => {
-                return index <= 3 ? this.renderNewsChunk(val) : null;
-              })}
+              <div>
+                {this.state.rightSlides.map(slide => {
+                  console.log('testing outer slide is---', slide);
+
+                  let ourSlide = null;
+
+                  if (slide.active) {
+                    ourSlide = slide;
+                  }
+
+                  return (
+                    ourSlide &&
+                    Object.values(ourSlide).map((val, index) => {
+                      // return this.renderNewsChunk(val);
+
+                      if (index < 4) {
+                        console.log('testing Internal obj is---', val, index);
+                        return (
+                          <div className="news-chunk-container">
+                            <img src={val.img} alt="" />
+                            <div className="news-desc-container">
+                              <div>{val.title}</div>
+
+                              <div className="news-text">
+                                <span>{val.name}</span>
+                                <span className="news-date">{val.date}</span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      }
+                    })
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
