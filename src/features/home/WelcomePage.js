@@ -182,6 +182,7 @@ class WelcomePage extends React.PureComponent {
     this.props.history.push('shop');
   };
 
+<<<<<<< Updated upstream
   // changeTab = index => {
   //   let newTabs = [];
 
@@ -209,6 +210,10 @@ class WelcomePage extends React.PureComponent {
   //   );
   // };
   // slid
+=======
+
+  // slider+++++
+>>>>>>> Stashed changes
 
   renderNewsChunk = val => {
     return (
@@ -408,7 +413,11 @@ class WelcomePage extends React.PureComponent {
             </div>
             <div className="left-hero-side">
               <div className='arrow-container'>
+<<<<<<< Updated upstream
                 <div className="leftarrow" >
+=======
+                <div className="leftarrow"  onClick={() => this.changeSlides()}>
+>>>>>>> Stashed changes
                   <img src="/assets/images/lftarrow.png"  />
                 </div>
                 <div className="dots">{this.renderDots()}</div>
