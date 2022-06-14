@@ -84,7 +84,7 @@ class WelcomePage extends React.PureComponent {
         [
           {
             id: 0,
-            img: '/assets/images/ricardou.jpg',
+            img: '/assets/images/ricardoz.jpg',
             title: '2 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
@@ -115,7 +115,7 @@ class WelcomePage extends React.PureComponent {
         [
           {
             id: 0,
-            img: '/assets/images/ricardou.jpg',
+            img: '/assets/images/ricardov.jpg',
             title: '3 How Did van Gogh’s Turbulent Mind',
             name: 'json',
             date: '1/03/444',
@@ -225,14 +225,34 @@ class WelcomePage extends React.PureComponent {
   };
 
   renderDots = () => {
-    return this.state.rightSlides.map(val => {
+    return this.state.rightSlides.map((val, index) => {
       console.log({ val });
-      return <div className={val.active ? 'dot active' : 'dot'}></div>;
+      return <div  onClick={() => this.onDotClick(index)} className={val.active ? 'dot active' : 'dot'}></div>;
     });
   };
 
-  changeSlides = direction => {
+
+  updateSlides = position => {
+
     let newSlides = [];
+    this.state.rightSlides.map((slide, index) => {
+      if (index == position) {
+        newSlides.push({ ...slide, active: true });
+      } else {
+        newSlides.push({ ...slide, active: false });
+      }
+    });
+
+    this.setState({ rightSlides: newSlides });
+  }
+
+
+
+  onDotClick = (position) =>{
+    this.updateSlides(position) 
+  }
+
+  changeSlides = direction => {
 
     let position = 0;
 
@@ -258,19 +278,7 @@ class WelcomePage extends React.PureComponent {
       }
     });
 
-    console.log('posiotn is--', position);
-
-    this.state.rightSlides.map((slide, index) => {
-      if (index == position) {
-        newSlides.push({ ...slide, active: true });
-      } else {
-        newSlides.push({ ...slide, active: false });
-      }
-    });
-
-    console.log('right slides formed----', newSlides);
-
-    this.setState({ rightSlides: newSlides });
+    this.updateSlides(position)
   };
 
   render() {
@@ -444,7 +452,10 @@ class WelcomePage extends React.PureComponent {
               </div>
             </div>
             <div className="left-hero-side">
+              <div className='top-stories'>
+            <div className='left-side-title'>Top stories</div>
               <div className="arrow-container">
+            
                 <div className="leftarrow" onClick={() => this.changeSlides('left')}>
                   <img src="/assets/images/lftarrow.png" alt="" />
                 </div>
@@ -452,6 +463,7 @@ class WelcomePage extends React.PureComponent {
                 <div className="rightarrow" onClick={() => this.changeSlides('right')}>
                   <img src="/assets/images/forward.png" alt="" />
                 </div>
+              </div>
               </div>
 
               <div>
