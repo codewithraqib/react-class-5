@@ -227,7 +227,7 @@ class WelcomePage extends React.PureComponent {
   renderDots = () => {
     return this.state.rightSlides.map((val, index) => {
       console.log({ val });
-      return <div  onClick={() => this.onDotClick(index)} className={val.active ? 'dot active' : 'dot'}></div>;
+      return <div  onClick={() => this.onDotClick(index)} className={val.active   ?  'dot active'  : 'dot '  }></div>;
     });
   };
 
@@ -309,7 +309,7 @@ class WelcomePage extends React.PureComponent {
             })}
           </Carousel>
         </div>
-        <div className="hero-container content-wrapper">
+        <div className="hero-container wrapper">
           <div className="inner-hero">
             <div className="right-hero-side">
               <div className="hero-side-header">
@@ -459,14 +459,14 @@ class WelcomePage extends React.PureComponent {
                 <div className="leftarrow" onClick={() => this.changeSlides('left')}>
                   <img src="/assets/images/lftarrow.png" alt="" />
                 </div>
-                <div className="dots">{this.renderDots()}</div>
+                <div className="dots" >{this.renderDots()}</div>
                 <div className="rightarrow" onClick={() => this.changeSlides('right')}>
                   <img src="/assets/images/forward.png" alt="" />
                 </div>
               </div>
               </div>
 
-              <div>
+              <div className='right-div'>
                 {this.state.rightSlides.map(slide => {
                   console.log('testing outer slide is---', slide);
 
@@ -500,6 +500,12 @@ class WelcomePage extends React.PureComponent {
                     })
                   );
                 })}
+              </div>
+              <div className='right-overlay-img'>
+                <div className='right-inner-overlay-img'>  <img src="/assets/images/right-inner.webp" alt="" />
+                
+                <div className='right-inner-overlay-text'>How Did van Gogh’s Turbulent Mind</div></div>
+                
               </div>
             </div>
           </div>
