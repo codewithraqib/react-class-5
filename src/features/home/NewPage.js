@@ -29,25 +29,49 @@ class NewPage extends React.PureComponent {
       ],
       leftcards: [
         {
-            url: '/assets/images/ricardov.jpg',
-            text: 'How Did van Goghs Turbulent Mind',
-          },
-          {
-            url: '/assets/images/ricardoz.jpg',
-            text: 'How Did van Goghs Turbulent Mind',
-          },
-          {
-            url: '/assets/images/ricardov.jpg',
-            text: 'How Did van Goghs Turbulent Mind',
-          },
-          {
-            url: '/assets/images/ricardou.jpg',
-            text: 'How Did van Goghs Turbulent Mind',
-          },
-
+          url: '/assets/images/ricardov.jpg',
+          text: 'How Did van Goghs Turbulent Mind',
+        },
+        {
+          url: '/assets/images/ricardoz.jpg',
+          text: 'How Did van Goghs Turbulent Mind',
+        },
+        {
+          url: '/assets/images/ricardov.jpg',
+          text: 'How Did van Goghs Turbulent Mind',
+        },
+        {
+          url: '/assets/images/ricardou.jpg',
+          text: 'How Did van Goghs Turbulent Mind',
+        },
       ],
     };
   }
+
+  //   firstPage = () => {
+  //     this.props.history.push('welcome');
+  //   };
+
+  createSideNewsItem = (val, index) => {
+    return (
+      // <div className="img-overlay">
+      //   <img src={val.url} />
+      //   <div className="overlay-text">
+      //     <span>{val.text}</span>
+      //   </div>
+      // </div>
+
+      <div key={index} className="side-img-container">
+        <img src={val.url} />
+        <div className="side-img-overlay">
+          <div className="overlay-text">
+            <span>{val.text}</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   render() {
     return (
       <div className="newpage-conatainer ">
@@ -67,7 +91,7 @@ class NewPage extends React.PureComponent {
           <div className="news-left-container">
             {this.state.rightcards.map((val, index) => {
               return (
-                <div className="card1" key={index}>
+                <div className="card1" onClick={() => this.firstPage()}>
                   <div className="desc-container">
                     <div className="card-img">
                       <img src={val.url} />
@@ -82,16 +106,9 @@ class NewPage extends React.PureComponent {
             })}
           </div>
           <div className="news-right-container">
-            {this.state.leftcards.map((val, index)=>{
-                return(
-                    <div className="img-overlay">
-                    <img src={val.url} />
-                    <div className='overlay-text'><span>{val.text}</span></div>
-                  </div>
-
-                );
+            {this.state.leftcards.map((val, index) => {
+              return this.createSideNewsItem(val, index);
             })}
-           
           </div>
         </div>
       </div>
