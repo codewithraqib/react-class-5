@@ -502,7 +502,8 @@ class WelcomePage extends React.PureComponent {
                 })}
               </div>
               <div className='right-overlay-img'>
-                <div className='right-inner-overlay-img'>  <img src="/assets/images/right-inner.webp" alt="" />
+                <div className='right-inner-overlay-img'> 
+                 <img src="/assets/images/right-inner.webp" alt="" />
                 
                 <div className='right-inner-overlay-text'>How Did van Gogh’s Turbulent Mind</div></div>
                 

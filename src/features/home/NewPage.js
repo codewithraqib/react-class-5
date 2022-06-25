@@ -78,7 +78,7 @@ class NewPage extends React.PureComponent {
       <div className="newpage-conatainer ">
         <div className="news-headline-container">
           <div className="headline-img">
-            <img src="/assets/images/market.jpg" />
+            <img src="/assets/images/natural3.jpg" />
           </div>
           <div className="headline-text">
             <span>
@@ -92,7 +92,7 @@ class NewPage extends React.PureComponent {
           <div className="news-left-container">
             {this.state.rightcards.map((val, index) => {
               return (
-                <div className="card1" onClick={() => this.firstPage(this.data)}>
+                <div className="card10" onClick={() => this.firstPage(this.data)}>
                   <div className="desc-container">
                     <div className="card-img">
                       <img src={val.url} />

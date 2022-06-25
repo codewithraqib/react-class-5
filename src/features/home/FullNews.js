@@ -14,11 +14,11 @@ class FullNews extends React.PureComponent {
   render() {
   
     return (
-    
       <div className="newpage-conatainer ">
+    
         <div className="news-headline-container">
           <div className="headline-img">
-            <img src="/assets/images/market.jpg" />
+            <img src="/assets/images/natural2.jpg" />
           </div>
           <div className="headline-text">
             <span>
