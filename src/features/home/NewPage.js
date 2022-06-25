@@ -48,9 +48,10 @@ class NewPage extends React.PureComponent {
     };
   }
 
-  //   firstPage = () => {
-  //     this.props.history.push('welcome');
-  //   };
+    firstPage = data => {
+        this.setState({data:'state/props'})
+      this.props.history.push('fullnews');
+    };
 
   createSideNewsItem = (val, index) => {
     return (
@@ -91,7 +92,7 @@ class NewPage extends React.PureComponent {
           <div className="news-left-container">
             {this.state.rightcards.map((val, index) => {
               return (
-                <div className="card1" onClick={() => this.firstPage()}>
+                <div className="card1" onClick={() => this.firstPage(this.data)}>
                   <div className="desc-container">
                     <div className="card-img">
                       <img src={val.url} />
