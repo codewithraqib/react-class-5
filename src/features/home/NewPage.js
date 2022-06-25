@@ -48,10 +48,11 @@ class NewPage extends React.PureComponent {
     };
   }
 
-    firstPage = data => {
-        this.setState({data:'state/props'})
-      this.props.history.push('fullnews');
-    };
+  firstPage = data => {
+    this.props.actions.setFullNewsData(data);
+    // this.setState({data:'state/props'})
+    this.props.history.push('fullnews');
+  };
 
   createSideNewsItem = (val, index) => {
     return (

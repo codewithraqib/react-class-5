@@ -1,0 +1,1 @@
+export { setFullNewsData } from './setFullNewsData';
