@@ -93,7 +93,7 @@ class NewPage extends React.PureComponent {
           <div className="news-left-container">
             {this.state.rightcards.map((val, index) => {
               return (
-                <div className="card10" onClick={() => this.firstPage(this.data)}>
+                <div className="card10" onClick={() => this.firstPage()}>
                   <div className="desc-container">
                     <div className="card-img">
                       <img src={val.url} />
