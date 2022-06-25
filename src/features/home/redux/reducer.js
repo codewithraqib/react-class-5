@@ -1,7 +1,7 @@
 import initialState from './initialState';
+import { reducer as setFullNewsData } from './setFullNewsData';
 
-const reducers = [
-];
+const reducers = [setFullNewsData];
 
 export default function reducer(state = initialState, action) {
   let newState;
