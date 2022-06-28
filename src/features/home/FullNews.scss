@@ -10,6 +10,16 @@
      
       }
     }
+    .date-and-author{
+      font-size: 12px;
+      font-weight: 600;
+      .author{
+        padding: 10px;
+      }
+      .date{
+        
+      }
+    }
     .headline-text {
 
       margin-top: 10px;
@@ -19,5 +29,6 @@
       text-align: center;
       word-wrap: break-word;
     }
+
   }
 }

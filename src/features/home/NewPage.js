@@ -14,21 +14,25 @@ class NewPage extends React.PureComponent {
           url: '/assets/images/ricardoz.jpg',
           text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
+          author:'json'
         },
         {
           url: '/assets/images/ricardou.jpg',
-          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: 'Stay entertained all the time! Book tickets for movies, concerts, live events, sports, activities, and much more on BookMyShow. Stream live events from the',
           date: '12/34/4444',
+          author:'Android Bot'
         },
         {
           url: '/assets/images/ricardoz.jpg',
-          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: 'Read the latest news and updates on Bookmyshow, Bookmyshow information at Business Standard.',
           date: '12/34/4444',
+          author:'Noob'
         },
         {
           url: '/assets/images/ricardou.jpg',
           text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
+          author:'json'
         },
       ],
       leftcards: [
