@@ -1,4 +1,8 @@
 import React from 'react';
+import * as actions from './redux/actions';
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class NewPage extends React.PureComponent {
   constructor(props) {
@@ -49,6 +53,7 @@ class NewPage extends React.PureComponent {
   }
 
   firstPage = data => {
+    console.log('Props in newpage---', this.props);
     this.props.actions.setFullNewsData(data);
     // this.setState({data:'state/props'})
     this.props.history.push('fullnews');
@@ -93,7 +98,7 @@ class NewPage extends React.PureComponent {
           <div className="news-left-container">
             {this.state.rightcards.map((val, index) => {
               return (
-                <div className="card1" onClick={() => this.firstPage(this.data)}>
+                <div className="card1" onClick={() => this.firstPage(val)}>
                   <div className="desc-container">
                     <div className="card-img">
                       <img src={val.url} />
@@ -118,4 +123,21 @@ class NewPage extends React.PureComponent {
   }
 }
 
-export default NewPage;
+// export default NewPage;
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+    // common: state.common,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewPage);

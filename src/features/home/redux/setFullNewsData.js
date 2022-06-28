@@ -1,6 +1,7 @@
 import { SET_FULL_NEWS_DATA } from './constants';
 
 export function setFullNewsData(data) {
+  console.log('testing data rec is-----', data);
   return {
     type: SET_FULL_NEWS_DATA,
     data: data,

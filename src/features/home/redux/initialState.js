@@ -1,5 +1,5 @@
 const initialState = {
-  fullNewsdata: null,
+  fullNewsData: null,
 };
 
 export default initialState;

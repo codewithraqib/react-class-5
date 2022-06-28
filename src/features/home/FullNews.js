@@ -1,36 +1,56 @@
 import React from 'react';
+import * as actions from './redux/actions';
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class FullNews extends React.PureComponent {
   constructor(props) {
     super(props);
-    
 
-    this.state = {
-    };
-    console.log('------ props in fullnews' , this.props)
+    this.state = {};
+    console.log('props in fullnews--------', this.props);
   }
 
+  componentDidMount() {
+    if (this.props && this.props.home && this.props.home.fullNewsData) {
+      this.setState({ currentNewsItem: this.props.home.fullNewsData });
+    }
+  }
 
   render() {
-  
-    return (
-    
+    return this.state.currentNewsItem ? (
       <div className="newpage-conatainer ">
         <div className="news-headline-container">
           <div className="headline-img">
-            <img src="/assets/images/market.jpg" />
+            <img src={this.state.currentNewsItem.url} alt="" />
           </div>
           <div className="headline-text">
-            <span>
-              How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?
-              Pick the yellow peach that looks like a sunset with its red, orange, and pink coat
-              skin, peel it off with your teeth. Sink them into unripened
-            </span>
+            <span>{this.state.currentNewsItem.text}</span>
           </div>
         </div>
       </div>
+    ) : (
+      <span>No news</span>
     );
   }
 }
 
-export default FullNews;
+// export default FullNews;
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+    // common: state.common,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FullNews);
