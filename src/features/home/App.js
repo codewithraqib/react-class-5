@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import { SideMenu } from '../common';
-import  ContactUs  from '../common/ContactUs';
+import * as actions from './redux/actions';
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 // export default function App({ children }) {
 //   return (
@@ -61,7 +63,19 @@ class App extends React.PureComponent {
       ],
       myName: 'Sameer',
     };
+
+    this.setDataBack();
   }
+
+  setDataBack = () => {
+    let fullNewsData = localStorage.getItem('fullNewsData');
+
+    if (fullNewsData) {
+      fullNewsData = JSON.parse(fullNewsData);
+
+      this.props.actions.setFullNewsData(fullNewsData);
+    }
+  };
 
   onNavItemClick = val => {
     // console.log('nav item Clicked in APP.js', val);
@@ -94,11 +108,28 @@ class App extends React.PureComponent {
         />
         {/* <SideMenu/> */}
         <div className="page-container">{this.props.children}</div>
-       
+
         <Footer history={this.props.history} footerLinks={this.state.footerLinks} />
       </div>
     );
   }
 }
 
-export default App;
+// export default App;
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+    // common: state.common,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

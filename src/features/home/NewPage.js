@@ -14,25 +14,27 @@ class NewPage extends React.PureComponent {
           url: '/assets/images/ricardoz.jpg',
           text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
-          author:'json'
+          author: 'json',
         },
         {
           url: '/assets/images/ricardou.jpg',
-          text: 'Stay entertained all the time! Book tickets for movies, concerts, live events, sports, activities, and much more on BookMyShow. Stream live events from the',
+          text:
+            'Stay entertained all the time! Book tickets for movies, concerts, live events, sports, activities, and much more on BookMyShow. Stream live events from the',
           date: '12/34/4444',
-          author:'Android Bot'
+          author: 'Android Bot',
         },
         {
           url: '/assets/images/ricardoz.jpg',
-          text: 'Read the latest news and updates on Bookmyshow, Bookmyshow information at Business Standard.',
+          text:
+            'Read the latest news and updates on Bookmyshow, Bookmyshow information at Business Standard.',
           date: '12/34/4444',
-          author:'Noob'
+          author: 'Noob',
         },
         {
           url: '/assets/images/ricardou.jpg',
           text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
-          author:'json'
+          author: 'json',
         },
       ],
       leftcards: [
@@ -58,6 +60,9 @@ class NewPage extends React.PureComponent {
 
   firstPage = data => {
     console.log('Props in newpage---', this.props);
+
+    localStorage.setItem('fullNewsData', JSON.stringify(data));
+    // sessionStorage
     this.props.actions.setFullNewsData(data);
     // this.setState({data:'state/props'})
     this.props.history.push('fullnews');
