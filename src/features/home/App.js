@@ -65,7 +65,7 @@ class App extends React.PureComponent {
     };
 
     this.setDataBack();
-    this.setDateRestore();
+    // this.setDateRestore();
   }
 
   setDataBack = () => {
@@ -77,15 +77,15 @@ class App extends React.PureComponent {
       this.props.actions.setFullNewsData(fullNewsData);
     }
   };
-  setDateRestore = () => {
-    let FirstNews = localStorage.getItem('FirstNews');
+  // setDateRestore = () => {
+  //   let FirstNews = localStorage.getItem('FirstNews');
 
-    if (FirstNews) {
-      FirstNews = JSON.parse(FirstNews);
+  //   if (FirstNews) {
+  //     FirstNews = JSON.parse(FirstNews);
 
-      this.props.actions.setFirstNews(FirstNews);
-    }
-  };
+  //     this.props.actions.setFirstNews(FirstNews);
+  //   }
+  // };
 
   onNavItemClick = val => {
     // console.log('nav item Clicked in APP.js', val);

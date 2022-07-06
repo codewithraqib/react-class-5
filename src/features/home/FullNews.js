@@ -15,11 +15,6 @@ class FullNews extends React.PureComponent {
   componentDidMount() {
     if (this.props && this.props.home && this.props.home.fullNewsData) {
       this.setState({ currentNewsItem: this.props.home.fullNewsData });
-    } 
-  }
-  componentDidMount() {
-    if (this.props && this.props.home && this.props.home.firstNews) {
-      this.setState({ currentNewsItem: this.props.home.firstNews });
     }
   }
 
@@ -30,9 +25,9 @@ class FullNews extends React.PureComponent {
           <div className="headline-img">
             <img src={this.state.currentNewsItem.url} alt="" />
           </div>
-          <div className='date-and-author'>
-            <span className='author'>{this.state.currentNewsItem.author}</span>
-            <span className='date'>{this.state.currentNewsItem.date}</span>
+          <div className="date-and-author">
+            <span className="author">{this.state.currentNewsItem.author}</span>
+            <span className="date">{this.state.currentNewsItem.date}</span>
           </div>
           <div className="headline-text">
             <span>{this.state.currentNewsItem.text}</span>

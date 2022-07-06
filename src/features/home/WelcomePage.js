@@ -17,18 +17,21 @@ class WelcomePage extends React.PureComponent {
       newscard: [
         {
           url: '/assets/images/market.jpg',
-          title:'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text: ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text:
+            ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
         },
         {
           url: '/assets/images/market.jpg',
-          title:'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text: ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text:
+            ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
-        },],
+        },
+      ],
       slides: [
         {
           url: '/assets/images/ricardoz.jpg',
@@ -245,13 +248,16 @@ class WelcomePage extends React.PureComponent {
   renderDots = () => {
     return this.state.rightSlides.map((val, index) => {
       console.log({ val });
-      return <div  onClick={() => this.onDotClick(index)} className={val.active   ?  'dot active'  : 'dot '  }></div>;
+      return (
+        <div
+          onClick={() => this.onDotClick(index)}
+          className={val.active ? 'dot active' : 'dot '}
+        ></div>
+      );
     });
   };
 
-
   updateSlides = position => {
-
     let newSlides = [];
     this.state.rightSlides.map((slide, index) => {
       if (index == position) {
@@ -262,16 +268,13 @@ class WelcomePage extends React.PureComponent {
     });
 
     this.setState({ rightSlides: newSlides });
-  }
+  };
 
-
-
-  onDotClick = (position) =>{
-    this.updateSlides(position) 
-  }
+  onDotClick = position => {
+    this.updateSlides(position);
+  };
 
   changeSlides = direction => {
-
     let position = 0;
 
     this.state.rightSlides.map((rightSlide, index) => {
@@ -296,14 +299,15 @@ class WelcomePage extends React.PureComponent {
       }
     });
 
-    this.updateSlides(position)
+    this.updateSlides(position);
   };
-  firstPage2 = data => {
-    console.log('Props in wellcome---', this.props);
 
-    localStorage.setItem('FirstNews', JSON.stringify(data));
+  firstPage2 = data => {
+    console.log('Props on news item click---', data);
+
+    localStorage.setItem('fullNewsData', JSON.stringify(data));
     // sessionStorage
-    this.props.actions.setFirstNews(data);
+    this.props.actions.setFullNewsData(data);
     // this.setState({data:'state/props'})
     this.props.history.push('fullnews');
   };
@@ -368,24 +372,19 @@ class WelcomePage extends React.PureComponent {
                 <div className="inner-news-container">
                   {/* vshlsdfhldudjjdjdfjk.dfjk.dfjkfdjkdfd */}
                   {this.state.newscard.map((val, index) => {
-              return (
-              
-                <div className="card"  onClick={() => this.firstPage2(val)}>
-                <div className="card-img">
-                  <img src={val.url}/>
-                </div>
-                <div className="desc-container">
-                  <div className="card-title">
-                  {val.title}
-                  </div>
-                  <div className="card-desc">
-                  {val.text}
-                  </div>
-                  <div className="card-date">{val.date}</div>
-                </div>
-              </div>
-              );
-            })}
+                    return (
+                      <div className="card" onClick={() => this.firstPage2(val)}>
+                        <div className="card-img">
+                          <img src={val.url} />
+                        </div>
+                        <div className="desc-container">
+                          <div className="card-title">{val.title}</div>
+                          <div className="card-desc">{val.text}</div>
+                          <div className="card-date">{val.date}</div>
+                        </div>
+                      </div>
+                    );
+                  })}
                   {/* ghsdvhcm */}
                   {/* <div className="card"  >
                 <div className="card-img">
@@ -500,21 +499,20 @@ class WelcomePage extends React.PureComponent {
               </div>
             </div>
             <div className="left-hero-side">
-              <div className='top-stories'>
-            <div className='left-side-title'>Top stories</div>
-              <div className="arrow-container">
-            
-                <div className="leftarrow" onClick={() => this.changeSlides('left')}>
-                  <img src="/assets/images/lftarrow.png" alt="" />
+              <div className="top-stories">
+                <div className="left-side-title">Top stories</div>
+                <div className="arrow-container">
+                  <div className="leftarrow" onClick={() => this.changeSlides('left')}>
+                    <img src="/assets/images/lftarrow.png" alt="" />
+                  </div>
+                  <div className="dots">{this.renderDots()}</div>
+                  <div className="rightarrow" onClick={() => this.changeSlides('right')}>
+                    <img src="/assets/images/forward.png" alt="" />
+                  </div>
                 </div>
-                <div className="dots" >{this.renderDots()}</div>
-                <div className="rightarrow" onClick={() => this.changeSlides('right')}>
-                  <img src="/assets/images/forward.png" alt="" />
-                </div>
-              </div>
               </div>
 
-              <div className='right-div'>
+              <div className="right-div">
                 {this.state.rightSlides.map(slide => {
                   console.log('testing outer slide is---', slide);
 
@@ -549,12 +547,12 @@ class WelcomePage extends React.PureComponent {
                   );
                 })}
               </div>
-              <div className='right-overlay-img'>
-                <div className='right-inner-overlay-img'> 
-                 <img src="/assets/images/right-inner.webp" alt="" />
-                
-                <div className='right-inner-overlay-text'>How Did van Gogh’s Turbulent Mind</div></div>
-                
+              <div className="right-overlay-img">
+                <div className="right-inner-overlay-img">
+                  <img src="/assets/images/right-inner.webp" alt="" />
+
+                  <div className="right-inner-overlay-text">How Did van Gogh’s Turbulent Mind</div>
+                </div>
               </div>
             </div>
           </div>

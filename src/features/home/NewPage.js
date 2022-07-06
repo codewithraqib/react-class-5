@@ -110,7 +110,7 @@ class NewPage extends React.PureComponent {
                 <div className="card1" onClick={() => this.firstPage(val)}>
                   <div className="desc-container">
                     <div className="card-img">
-                      <img src={val.url} />
+                      <img src={val.url} alt="" />
                     </div>
                     <div className="card-title">
                       {val.text}
