@@ -5,12 +5,30 @@ import { Carousel } from 'react-responsive-carousel';
 // import Box from '@mui/material/Box';
 // import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
+import * as actions from './redux/actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class WelcomePage extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
+      newscard: [
+        {
+          url: '/assets/images/market.jpg',
+          title:'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },
+        {
+          url: '/assets/images/market.jpg',
+          title:'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },],
       slides: [
         {
           url: '/assets/images/ricardoz.jpg',
@@ -280,6 +298,15 @@ class WelcomePage extends React.PureComponent {
 
     this.updateSlides(position)
   };
+  firstPage2 = data => {
+    console.log('Props in wellcome---', this.props);
+
+    localStorage.setItem('FirstNews', JSON.stringify(data));
+    // sessionStorage
+    this.props.actions.setFirstNews(data);
+    // this.setState({data:'state/props'})
+    this.props.history.push('fullnews');
+  };
 
   render() {
     return (
@@ -339,22 +366,43 @@ class WelcomePage extends React.PureComponent {
               </div>
               <div className="main-news-container">
                 <div className="inner-news-container">
-                  <div className="card">
-                    <div className="card-img">
-                      <img src="/assets/images/market.jpg" />
-                    </div>
-                    <div className="desc-container">
-                      <div className="card-title">
-                        How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                        Physics?
-                      </div>
-                      <div className="card-desc">
-                        Pick the yellow peach that looks like a sunset with its red, orange, and
-                        pink coat skin, peel it off with your teeth. Sink them into unripened...
-                      </div>
-                      <div className="card-date">11/26/4444</div>
-                    </div>
+                  {/* vshlsdfhldudjjdjdfjk.dfjk.dfjkfdjkdfd */}
+                  {this.state.newscard.map((val, index) => {
+              return (
+              
+                <div className="card"  onClick={() => this.firstPage2(val)}>
+                <div className="card-img">
+                  <img src={val.url}/>
+                </div>
+                <div className="desc-container">
+                  <div className="card-title">
+                  {val.title}
                   </div>
+                  <div className="card-desc">
+                  {val.text}
+                  </div>
+                  <div className="card-date">{val.date}</div>
+                </div>
+              </div>
+              );
+            })}
+                  {/* ghsdvhcm */}
+                  {/* <div className="card"  >
+                <div className="card-img">
+                  <img src="/assets/images/market.jpg" />
+                </div>
+                <div className="desc-container">
+                  <div className="card-title">
+                    How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
+                    Physics?
+                  </div>
+                  <div className="card-desc">
+                    Pick the yellow peach that looks like a sunset with its red, orange, and
+                    pink coat skin, peel it off with your teeth. Sink them into unripened...
+                  </div>
+                  <div className="card-date">11/26/4444</div>
+                </div>
+              </div> */}
                   <div className="card2">
                     <div className="desc-container">
                       <div className="card-title">
@@ -516,4 +564,19 @@ class WelcomePage extends React.PureComponent {
   }
 }
 
-export default WelcomePage;
+// export default WelcomePage;
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+    // common: state.common,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WelcomePage);

@@ -15,6 +15,11 @@ class FullNews extends React.PureComponent {
   componentDidMount() {
     if (this.props && this.props.home && this.props.home.fullNewsData) {
       this.setState({ currentNewsItem: this.props.home.fullNewsData });
+    } 
+  }
+  componentDidMount() {
+    if (this.props && this.props.home && this.props.home.firstNews) {
+      this.setState({ currentNewsItem: this.props.home.firstNews });
     }
   }
 

@@ -65,6 +65,7 @@ class App extends React.PureComponent {
     };
 
     this.setDataBack();
+    this.setDateRestore();
   }
 
   setDataBack = () => {
@@ -74,6 +75,15 @@ class App extends React.PureComponent {
       fullNewsData = JSON.parse(fullNewsData);
 
       this.props.actions.setFullNewsData(fullNewsData);
+    }
+  };
+  setDateRestore = () => {
+    let FirstNews = localStorage.getItem('FirstNews');
+
+    if (FirstNews) {
+      FirstNews = JSON.parse(FirstNews);
+
+      this.props.actions.setFirstNews(FirstNews);
     }
   };
 

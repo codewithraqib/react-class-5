@@ -1,1 +1,2 @@
 export const SET_FULL_NEWS_DATA = 'SET_FULL_NEWS_DATA';
+export const SET_FIRST_NEWS = 'SET_FIRST_NEWS';
