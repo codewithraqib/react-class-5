@@ -23,14 +23,19 @@ class WelcomePage extends React.PureComponent {
           date: '12/34/4444',
           author: 'json',
         },
-        {
-          url: '/assets/images/market.jpg',
-          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text:
-            ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          date: '12/34/4444',
-          author: 'json',
-        },
+        // {
+        //   title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+        //   date: '12/34/4444',
+        //   author: 'json',
+        // },
+        // {
+        //   url: '/assets/images/ricardou.jpg',
+        //   title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+        //   text:
+        //     'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+        //   date: '12/34/4444',
+        //   author: 'json',
+        // },
       ],
       slides: [
         {
@@ -369,46 +374,30 @@ class WelcomePage extends React.PureComponent {
                 <span>{this.state.currentData}</span>
               </div>
               <div className="main-news-container">
+     
                 <div className="inner-news-container">
-                  {/* vshlsdfhldudjjdjdfjk.dfjk.dfjkfdjkdfd */}
-                  {this.state.newscard.map((val, index) => {
-                    return (
-                      <div className="card" onClick={() => this.firstPage2(val)}>
+                  
+              
+                
+                      <div className="card" >
                         <div className="card-img">
-                          <img src={val.url} />
+                          <img src="/assets/images/market.jpg" />
                         </div>
                         <div className="desc-container">
-                          <div className="card-title">{val.title}</div>
-                          <div className="card-desc">{val.text}</div>
-                          <div className="card-date">{val.date}</div>
+                          <div className="card-title"> How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts</div>
+                          <div className="card-desc">Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts</div>
+                          <div className="card-date">23/33/4444</div>
                         </div>
                       </div>
-                    );
-                  })}
-                  {/* ghsdvhcm */}
-                  {/* <div className="card"  >
-                <div className="card-img">
-                  <img src="/assets/images/market.jpg" />
-                </div>
-                <div className="desc-container">
-                  <div className="card-title">
-                    How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                    Physics?
-                  </div>
-                  <div className="card-desc">
-                    Pick the yellow peach that looks like a sunset with its red, orange, and
-                    pink coat skin, peel it off with your teeth. Sink them into unripened...
-                  </div>
-                  <div className="card-date">11/26/4444</div>
-                </div>
-              </div> */}
+                      
+          
                   <div className="card2">
                     <div className="desc-container">
                       <div className="card-title">
-                        How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                        Physics?{' '}
+                      How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
+                        Physics?
                       </div>
-                      <div className="card-date">122/3737</div>
+                      <div className="card-date">23/33/555</div>
                     </div>
                   </div>
                   <div className="card3">
@@ -422,9 +411,14 @@ class WelcomePage extends React.PureComponent {
                       </div>
                       <div className="card-date">23/09/22</div>
                     </div>
+                 
                   </div>
+                 
+              
+         
                 </div>
-
+                 
+  
                 <div className="sub-inner">
                   <div className="card4">
                     <div className="card-img">
