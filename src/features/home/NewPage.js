@@ -9,53 +9,27 @@ class NewPage extends React.PureComponent {
     super(props);
 
     this.state = {
-      rightcards: [
-        {
-          url: '/assets/images/ricardoz.jpg',
-          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          date: '12/34/4444',
-          author: 'json',
-        },
-        {
-          url: '/assets/images/ricardou.jpg',
-          text:
-            'Stay entertained all the time! Book tickets for movies, concerts, live events, sports, activities, and much more on BookMyShow. Stream live events from the',
-          date: '12/34/4444',
-          author: 'Android Bot',
-        },
-        {
-          url: '/assets/images/ricardoz.jpg',
-          text:
-            'Read the latest news and updates on Bookmyshow, Bookmyshow information at Business Standard.',
-          date: '12/34/4444',
-          author: 'Noob',
-        },
-        {
-          url: '/assets/images/ricardou.jpg',
-          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          date: '12/34/4444',
-          author: 'json',
-        },
-      ],
-      leftcards: [
-        {
-          url: '/assets/images/ricardov.jpg',
-          text: 'How Did van Goghs Turbulent Mind',
-        },
-        {
-          url: '/assets/images/ricardoz.jpg',
-          text: 'How Did van Goghs Turbulent Mind',
-        },
-        {
-          url: '/assets/images/ricardov.jpg',
-          text: 'How Did van Goghs Turbulent Mind',
-        },
-        {
-          url: '/assets/images/ricardou.jpg',
-          text: 'How Did van Goghs Turbulent Mind',
-        },
-      ],
+      rightcards: [],
+      leftcards: [],
     };
+
+    console.log('props in New Page----', this.props);
+
+    this.props.actions.apiCall({
+      url:
+        'https://newsapi.org/v2/top-headlines?country=us&apiKey=c7685bfac7fb4a529ff57df66844c838',
+      method: 'GET',
+      callback: res => {
+        console.log('respnse from API is---', res);
+
+        if (res && res.data && res.data.articles) {
+          this.setState({
+            rightcards: res.data.articles.slice(0, 9),
+            leftcards: res.data.articles.slice(10, 19),
+          });
+        }
+      },
+    });
   }
 
   firstPage = data => {
@@ -70,18 +44,11 @@ class NewPage extends React.PureComponent {
 
   createSideNewsItem = (val, index) => {
     return (
-      // <div className="img-overlay">
-      //   <img src={val.url} />
-      //   <div className="overlay-text">
-      //     <span>{val.text}</span>
-      //   </div>
-      // </div>
-
       <div key={index} className="side-img-container">
-        <img src={val.url} />
+        <img src={val.urlToImage} />
         <div className="side-img-overlay">
           <div className="overlay-text">
-            <span>{val.text}</span>
+            <span>{val.title}</span>
           </div>
         </div>
       </div>
@@ -110,11 +77,11 @@ class NewPage extends React.PureComponent {
                 <div className="card1" onClick={() => this.firstPage(val)}>
                   <div className="desc-container">
                     <div className="card-img">
-                      <img src={val.url} alt="" />
+                      <img src={val.urlToImage} alt="" />
                     </div>
                     <div className="card-title">
-                      {val.text}
-                      <div className="card-date">{val.date}</div>
+                      {val.title}
+                      <div className="card-date">{val.publishedAt.split('T')[0]}</div>
                     </div>
                   </div>
                 </div>

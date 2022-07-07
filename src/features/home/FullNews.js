@@ -23,14 +23,17 @@ class FullNews extends React.PureComponent {
       <div className="newpage-conatainer ">
         <div className="news-headline-container">
           <div className="headline-img">
-            <img src={this.state.currentNewsItem.url} alt="" />
+            <img src={this.state.currentNewsItem.urlToImage} alt="" />
           </div>
           <div className="date-and-author">
             <span className="author">{this.state.currentNewsItem.author}</span>
-            <span className="date">{this.state.currentNewsItem.date}</span>
+            <span className="date">{this.state.currentNewsItem.publishedAt.split('T')[0]}</span>
           </div>
           <div className="headline-text">
-            <span>{this.state.currentNewsItem.text}</span>
+            <span>{this.state.currentNewsItem.title}</span>
+          </div>
+          <div className="headline-text">
+            <span>{this.state.currentNewsItem.description}</span>
           </div>
         </div>
       </div>

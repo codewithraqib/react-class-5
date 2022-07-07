@@ -18,10 +18,11 @@ export function apiCall(args = {}) {
       let doRequest;
 
       const headers = {};
-      set(headers, 'category_type', '1');
+      // set(headers, 'category_type', '1');
       set(headers, 'Accept', 'application/json');
       set(headers, 'Content-Type', 'application/json; charset=utf-8');
-      set(headers, 'language', 'en');
+      // set(headers, 'language', 'en');
+      // set(headers, 'Access-Control-Allow-Origin', '*');
       // set(
       //   headers,
       //   'Authorization',
