@@ -103,16 +103,19 @@ class WelcomePage extends React.PureComponent {
         },
         {
           id: 1,
+          urlToImage:'/assets/images/ricardou.jpg',
           data:
             'all ok     How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
         },
         {
           id: 2,
+          urlToImage:'/assets/images/ricardou.jpg',
           data:
             'national us ok    How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
         },
         {
           id: 3,
+          urlToImage:'/assets/images/ricardou.jpg',
           data:
             'International us ok  How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
         },
@@ -260,6 +263,32 @@ class WelcomePage extends React.PureComponent {
     setTimeout(() => {
       this.getTabData();
     }, 100);
+
+
+
+
+  this.getNews();
+
+
+  };
+
+
+  getNews = (category = 'top-headlines') => {
+    this.props.actions.apiCall({
+      url: `https://newsapi.org/v2/${category}?country=us&apiKey=c7685bfac7fb4a529ff57df66844c838`,
+      method: 'GET',
+      callback: res => {
+        console.log('respnse from API is---', res);
+
+        if (res && res.data && res.data.articles) {
+          this.setState({
+            // rightcards: res.data.articles.slice(0, 9),
+            // leftcards: res.data.articles.slice(10, 19),
+            currentNewsList: res.data.articles
+          });
+        }
+      },
+    });
   };
 
   getTabData = () => {
@@ -359,6 +388,21 @@ class WelcomePage extends React.PureComponent {
     this.props.history.push('fullnews');
   };
 
+
+  newsItemGeneral = newsItem => {
+    return   <div className="single-news-card">
+    <div className="card-desc-container">
+      <div className="card-img">
+        <img src={newsItem.urlToImage} alt="" />
+      </div>
+      <div className="card-title">
+      {newsItem.title}
+      <div className="card-desc">{newsItem.content}</div>
+        <div className="card-date" ><div className="card-author" >{newsItem.author}</div>{newsItem.publishedAt.split('T')[0]}</div>
+      </div>
+    </div>
+  </div>
+  }
   render() {
     return (
       <div className="home-welcome-page">
@@ -406,7 +450,11 @@ class WelcomePage extends React.PureComponent {
                         className={tab.active ? 'tab active-tab' : 'tab'}
                         onClick={() => this.onTabClick(tab)}
                       >
-                        <span>{tab.name}</span>
+                         
+                        <div className='single-news-card'>
+                        <div>{tab.img}</div>
+                          <div>{tab.name}</div>
+                        </div>
                       </div>
                     );
                   })}
@@ -509,6 +557,7 @@ class WelcomePage extends React.PureComponent {
                           className={tab.active ? 'tab active-tab' : 'tab'}
                           onClick={() => this.onTabClick(tab)}
                         >
+                          
                           <span>{tab.name}</span>
                         </div>
                       );
@@ -516,7 +565,11 @@ class WelcomePage extends React.PureComponent {
                   </div>
                 </div>
                 <div className="tab-desc">
-                  <span>{this.state.currentData}</span>
+                  
+                  <span>{this.state.currentNewsList && this.state.currentNewsList.map(newsItem => {
+                    return this.newsItemGeneral(newsItem)
+                  })}</span>
+                  
                 </div>
               </div>
             </div>
