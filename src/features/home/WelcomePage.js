@@ -16,26 +16,68 @@ class WelcomePage extends React.PureComponent {
     this.state = {
       newscard: [
         {
-          url: '/assets/images/market.jpg',
+          urlToImage: '/assets/images/market.jpg',
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           text:
             ' Pick the yellow peach that looks like a sunset with its red, orange, and How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
         },
-        // {
-        //   title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-        //   date: '12/34/4444',
-        //   author: 'json',
-        // },
-        // {
-        //   url: '/assets/images/ricardou.jpg',
-        //   title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-        //   text:
-        //     'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-        //   date: '12/34/4444',
-        //   author: 'json',
-        // },
+        {
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },
+        {
+          url: '/assets/images/ricardou.jpg',
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text:
+            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },
+        {
+          url: '/assets/images/ricardou.jpg',
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text:
+            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },
+      ],
+      subnewscard:[
+        {
+          url: '/assets/images/market.jpg',
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text:
+            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },
+        {
+          url: '/assets/images/market.jpg',
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text:
+            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          date: '12/34/4444',
+          author: 'json',
+        },
+        {
+         
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+        
+        },
+        {
+         
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+        
+        },
+        {
+         
+          title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+        
+        },
+        
       ],
       slides: [
         {
@@ -307,7 +349,7 @@ class WelcomePage extends React.PureComponent {
     this.updateSlides(position);
   };
 
-  firstPage2 = data => {
+  newsClicked = data => {
     console.log('Props on news item click---', data);
 
     localStorage.setItem('fullNewsData', JSON.stringify(data));
@@ -375,9 +417,9 @@ class WelcomePage extends React.PureComponent {
               </div>
               <div className="main-news-container">
                 <div className="inner-news-container">
-                  <div className="card">
+                  <div className="card" onClick={() => this.newsClicked(this.state.newscard[0])}>
                     <div className="card-img">
-                      <img src={this.state.newscard[0].url} alt="" />
+                      <img src={this.state.newscard[0].urlToImage} alt="" />
                     </div>
                     <div className="desc-container">
                       <div className="card-title"> {this.state.newscard[0].title}</div>
@@ -389,22 +431,20 @@ class WelcomePage extends React.PureComponent {
                   <div className="card2">
                     <div className="desc-container">
                       <div className="card-title">
-                        How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                        Physics?
+                      {this.state.newscard[1].title}
                       </div>
-                      <div className="card-date">23/33/555</div>
+                      <div className="card-date">{this.state.newscard[1].date}</div>
                     </div>
                   </div>
                   <div className="card3">
                     <div className="desc-container">
                       <div className="card-img">
-                        <img src="/assets/images/ricardou.jpg" alt="" />
+                        <img src={this.state.newscard[2].url} alt="" />
                       </div>
                       <div className="card-title">
-                        How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                        Physics?
+                      {this.state.newscard[2].title}
                       </div>
-                      <div className="card-date">23/09/22</div>
+                      <div className="card-date">{this.state.newscard[2].date}</div>
                     </div>
                   </div>
                 </div>
@@ -412,43 +452,41 @@ class WelcomePage extends React.PureComponent {
                 <div className="sub-inner">
                   <div className="card4">
                     <div className="card-img">
-                      <img src="/assets/images/market.jpg" />
+                      <img src={this.state.subnewscard[0].url} />
                     </div>
                     <div className="desc-container">
                       <div className="card-title">
-                        How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                        Physics?
+                      {this.state.subnewscard[0].title}
                       </div>
 
-                      <div className="card-date">11/26/4444</div>
+                      <div className="card-date">{this.state.subnewscard[0].date}</div>
                     </div>
                   </div>
                   <div className="card5">
                     <div className="card-img">
-                      <img src="/assets/images/market.jpg" />
+                      <img src={this.state.subnewscard[1].url} />
                     </div>
                     <div className="desc-container">
                       <div className="card-title">
-                        How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                        Physics?
+                      {this.state.subnewscard[1].title}
                       </div>
 
-                      <div className="card-date">11/26/4444</div>
+                      <div className="card-date">{this.state.subnewscard[1].date}</div>
                     </div>
                   </div>
                   <div className="card6">
                     <div className="card-title">
-                      How Did van Gogh’s Turbulent Mind Depict One of Physics?{' '}
+                    {this.state.subnewscard[2].title}
                     </div>
                   </div>
                   <div className="card7">
                     <div className="card-title">
-                      How Did van Gogh’s Turbulent Mind Depict One of Physics?{' '}
+                    {this.state.subnewscard[3].title}
                     </div>
                   </div>
                   <div className="card8">
                     <div className="card-title">
-                      How Did van Gogh’s Turbulent Mind Depict One of Physics?{' '}
+                    {this.state.subnewscard[4].title}
                     </div>
                   </div>
                 </div>

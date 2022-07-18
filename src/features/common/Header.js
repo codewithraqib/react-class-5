@@ -8,12 +8,13 @@ class Header extends React.PureComponent {
 
     console.log('Props in Header are----', this.props);
   }
+ 
 
   render() {
     return (
       <div className="nav-container">
         <div className="logo-container">
-          <div className='idps-logo'><img src={this.props.logo} alt="logo" />
+          <div className='idps-logo' onClick={() => this.home()}><img src={this.props.logo} alt="logo" />
           </div>
           
           <div className='logo-text'>

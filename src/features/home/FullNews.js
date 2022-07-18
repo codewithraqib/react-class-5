@@ -27,12 +27,17 @@ class FullNews extends React.PureComponent {
           </div>
           <div className="date-and-author">
             <span className="author">{this.state.currentNewsItem.author}</span>
-            <span className="date">{this.state.currentNewsItem.publishedAt.split('T')[0]}</span>
+
+            {
+              this.state.currentNewsItem && this.state.currentNewsItem.publishedAt ? 
+              <span className="date">{ this.state.currentNewsItem.publishedAt.split('T')[0]}</span>
+              : <span className="date">{ this.state.currentNewsItem && this.state.currentNewsItem.date && this.state.currentNewsItem.date.split('T')[0]}</span>
+            }
           </div>
           <div className="headline-text">
             <span>{this.state.currentNewsItem.title}</span>
           </div>
-          <div className="headline-text">
+          <div className="headline-text-desc">
             <span>{this.state.currentNewsItem.description}</span>
           </div>
         </div>

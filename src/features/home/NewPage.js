@@ -11,7 +11,12 @@ class NewPage extends React.PureComponent {
     this.state = {
       rightcards: [],
       leftcards: [],
+
+
+      
     };
+
+    // this.formatDate("2022-07-04")
 
     console.log('props in New Page----', this.props);
 
@@ -58,6 +63,24 @@ class NewPage extends React.PureComponent {
     );
   };
 
+
+  formatDate = (date, seperator = "-" ) => {
+    if(date){
+      let dateParts = date.split("-");
+
+
+      
+
+      let formatedDate =  dateParts[2]+seperator+dateParts[1]+seperator +dateParts[0];
+      console.log("formatedDate----", formatedDate)
+
+      return formatedDate
+    }
+  }
+
+
+
+ 
   render() {
     return (
       <div className="newpage-conatainer ">
@@ -84,7 +107,7 @@ class NewPage extends React.PureComponent {
                     </div>
                     <div className="card-title">
                       {val.title}
-                      <div className="card-date">{val.publishedAt.split('T')[0]}</div>
+                      <div className="card-date" > {this.formatDate(val.publishedAt.split('T')[0], "/")}</div>
                     </div>
                   </div>
                 </div>
