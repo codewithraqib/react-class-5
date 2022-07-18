@@ -15,9 +15,12 @@ class NewPage extends React.PureComponent {
 
     console.log('props in New Page----', this.props);
 
+    this.getNews('sports');
+  }
+
+  getNews = (category = 'top-headlines') => {
     this.props.actions.apiCall({
-      url:
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=c7685bfac7fb4a529ff57df66844c838',
+      url: `https://newsapi.org/v2/${category}?country=us&apiKey=c7685bfac7fb4a529ff57df66844c838`,
       method: 'GET',
       callback: res => {
         console.log('respnse from API is---', res);
@@ -30,7 +33,7 @@ class NewPage extends React.PureComponent {
         }
       },
     });
-  }
+  };
 
   firstPage = data => {
     console.log('Props in newpage---', this.props);
