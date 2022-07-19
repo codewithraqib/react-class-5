@@ -18,6 +18,8 @@
     "babel-plugin-named-asset-import": "^0.3.0",
     "babel-preset-react-app": "7.0.2",
     "bfj": "6.1.1",
+    "bulma": "^0.9.4",
+    "bulma-helpers": "^0.4.2",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "connected-react-router": "^6.2.2",
@@ -44,17 +46,20 @@
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
+    "material-design-icons": "^3.0.1",
     "mini-css-extract-plugin": "0.4.3",
     "nock": "^10.0.6",
     "node-sass-chokidar": "^1.3.4",
     "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pdf-viewer-reactjs": "^2.2.3",
     "pnp-webpack-plugin": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.3.1",
     "postcss-safe-parser": "4.0.1",
+    "precise-ui": "^2.1.15",
     "prettier": "^1.16.3",
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "react-app-polyfill": "^0.2.0",
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.8.6",
@@ -65,6 +70,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.0.1",
     "react-tabs": "^5.1.0",
+    "reactjs-pdf-reader": "^1.0.12",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
@@ -72,6 +78,7 @@
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
+    "styled-components": "^5.3.5",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
     "webpack": "4.19.1",
@@ -130,5 +137,8 @@
       "jsx",
       "node"
     ]
+  },
+  "devDependencies": {
+    "react-view-pdf": "^1.0.0"
   }
 }
