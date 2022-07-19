@@ -31,53 +31,42 @@ class WelcomePage extends React.PureComponent {
         {
           url: '/assets/images/ricardou.jpg',
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text:
-            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
         },
         {
           url: '/assets/images/ricardou.jpg',
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text:
-            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
         },
       ],
-      subnewscard:[
+      subnewscard: [
         {
           url: '/assets/images/market.jpg',
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text:
-            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
         },
         {
           url: '/assets/images/market.jpg',
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-          text:
-            'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
+          text: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
           date: '12/34/4444',
           author: 'json',
         },
         {
-         
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-        
         },
         {
-         
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-        
         },
         {
-         
           title: 'How Did van Goghs Turbulent Mind Depict One of the Most Complex Concepts',
-        
         },
-        
       ],
       slides: [
         {
@@ -94,6 +83,8 @@ class WelcomePage extends React.PureComponent {
         { id: 1, name: 'Sports', active: false },
         { id: 2, name: 'National', active: false },
         { id: 3, name: 'International', active: false },
+        { id: 4, name: 'politics', active: false },
+        { id: 5, name: 'kashmir', active: false },
       ],
       tabData: [
         {
@@ -103,19 +94,31 @@ class WelcomePage extends React.PureComponent {
         },
         {
           id: 1,
-          urlToImage:'/assets/images/ricardou.jpg',
+          urlToImage: '/assets/images/ricardou.jpg',
           data:
             'all ok     How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
         },
         {
           id: 2,
-          urlToImage:'/assets/images/ricardou.jpg',
+          urlToImage: '/assets/images/ricardou.jpg',
           data:
             'national us ok    How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
         },
         {
           id: 3,
-          urlToImage:'/assets/images/ricardou.jpg',
+          urlToImage: '/assets/images/ricardou.jpg',
+          data:
+            'International us ok  How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
+        },
+        {
+          id: 4,
+          urlToImage: '/assets/images/ricardou.jpg',
+          data:
+            'International us ok  How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
+        },
+        {
+          id: 5,
+          urlToImage: '/assets/images/ricardou.jpg',
           data:
             'International us ok  How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?',
         },
@@ -221,6 +224,8 @@ class WelcomePage extends React.PureComponent {
     };
 
     this.setupSlides();
+
+    this.getNews('all');
   }
 
   setupSlides = () => {
@@ -264,18 +269,12 @@ class WelcomePage extends React.PureComponent {
       this.getTabData();
     }, 100);
 
-
-
-
-  this.getNews();
-
-
+    this.getNews(tab.name);
   };
 
-
-  getNews = (category = 'top-headlines') => {
+  getNews = (category = 'national') => {
     this.props.actions.apiCall({
-      url: `https://newsapi.org/v2/${category}?country=us&apiKey=c7685bfac7fb4a529ff57df66844c838`,
+      url: `https://newsapi.org/v2/everything?q=${category}&apiKey=c7685bfac7fb4a529ff57df66844c838`,
       method: 'GET',
       callback: res => {
         console.log('respnse from API is---', res);
@@ -284,7 +283,7 @@ class WelcomePage extends React.PureComponent {
           this.setState({
             // rightcards: res.data.articles.slice(0, 9),
             // leftcards: res.data.articles.slice(10, 19),
-            currentNewsList: res.data.articles
+            currentNewsList: res.data.articles.splice(0, 19),
           });
         }
       },
@@ -294,7 +293,7 @@ class WelcomePage extends React.PureComponent {
   getTabData = () => {
     this.state.tabs.map(tab => {
       if (tab.active) {
-        console.log('i am inside++++++++++++++', this.state.tabData[tab.id].data);
+        // console.log('i am inside++++++++++++++', this.state.tabData[tab.id].data);
         this.setState({ currentData: this.state.tabData[tab.id].data });
       }
     });
@@ -388,21 +387,25 @@ class WelcomePage extends React.PureComponent {
     this.props.history.push('fullnews');
   };
 
-
   newsItemGeneral = newsItem => {
-    return   <div className="single-news-card">
-    <div className="card-desc-container">
-      <div className="card-img">
-        <img src={newsItem.urlToImage} alt="" />
+    return (
+      <div className="single-news-card">
+        <div className="card-desc-container">
+          <div className="card-img">
+            <img src={newsItem.urlToImage} alt="" />
+          </div>
+          <div className="card-title">
+            {newsItem.title}
+            <div className="card-desc">{newsItem.content}</div>
+            <div className="card-date">
+              <div className="card-author">{newsItem.author}</div>
+              {newsItem.publishedAt.split('T')[0]}
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="card-title">
-      {newsItem.title}
-      <div className="card-desc">{newsItem.content}</div>
-        <div className="card-date" ><div className="card-author" >{newsItem.author}</div>{newsItem.publishedAt.split('T')[0]}</div>
-      </div>
-    </div>
-  </div>
-  }
+    );
+  };
   render() {
     return (
       <div className="home-welcome-page">
@@ -450,9 +453,8 @@ class WelcomePage extends React.PureComponent {
                         className={tab.active ? 'tab active-tab' : 'tab'}
                         onClick={() => this.onTabClick(tab)}
                       >
-                         
-                        <div className='single-news-card'>
-                        <div>{tab.img}</div>
+                        <div className="single-news-card">
+                          <div>{tab.img}</div>
                           <div>{tab.name}</div>
                         </div>
                       </div>
@@ -478,9 +480,7 @@ class WelcomePage extends React.PureComponent {
 
                   <div className="card2">
                     <div className="desc-container">
-                      <div className="card-title">
-                      {this.state.newscard[1].title}
-                      </div>
+                      <div className="card-title">{this.state.newscard[1].title}</div>
                       <div className="card-date">{this.state.newscard[1].date}</div>
                     </div>
                   </div>
@@ -489,9 +489,7 @@ class WelcomePage extends React.PureComponent {
                       <div className="card-img">
                         <img src={this.state.newscard[2].url} alt="" />
                       </div>
-                      <div className="card-title">
-                      {this.state.newscard[2].title}
-                      </div>
+                      <div className="card-title">{this.state.newscard[2].title}</div>
                       <div className="card-date">{this.state.newscard[2].date}</div>
                     </div>
                   </div>
@@ -503,9 +501,7 @@ class WelcomePage extends React.PureComponent {
                       <img src={this.state.subnewscard[0].url} />
                     </div>
                     <div className="desc-container">
-                      <div className="card-title">
-                      {this.state.subnewscard[0].title}
-                      </div>
+                      <div className="card-title">{this.state.subnewscard[0].title}</div>
 
                       <div className="card-date">{this.state.subnewscard[0].date}</div>
                     </div>
@@ -515,27 +511,19 @@ class WelcomePage extends React.PureComponent {
                       <img src={this.state.subnewscard[1].url} />
                     </div>
                     <div className="desc-container">
-                      <div className="card-title">
-                      {this.state.subnewscard[1].title}
-                      </div>
+                      <div className="card-title">{this.state.subnewscard[1].title}</div>
 
                       <div className="card-date">{this.state.subnewscard[1].date}</div>
                     </div>
                   </div>
                   <div className="card6">
-                    <div className="card-title">
-                    {this.state.subnewscard[2].title}
-                    </div>
+                    <div className="card-title">{this.state.subnewscard[2].title}</div>
                   </div>
                   <div className="card7">
-                    <div className="card-title">
-                    {this.state.subnewscard[3].title}
-                    </div>
+                    <div className="card-title">{this.state.subnewscard[3].title}</div>
                   </div>
                   <div className="card8">
-                    <div className="card-title">
-                    {this.state.subnewscard[4].title}
-                    </div>
+                    <div className="card-title">{this.state.subnewscard[4].title}</div>
                   </div>
                 </div>
 
@@ -557,7 +545,6 @@ class WelcomePage extends React.PureComponent {
                           className={tab.active ? 'tab active-tab' : 'tab'}
                           onClick={() => this.onTabClick(tab)}
                         >
-                          
                           <span>{tab.name}</span>
                         </div>
                       );
@@ -565,11 +552,12 @@ class WelcomePage extends React.PureComponent {
                   </div>
                 </div>
                 <div className="tab-desc">
-                  
-                  <span>{this.state.currentNewsList && this.state.currentNewsList.map(newsItem => {
-                    return this.newsItemGeneral(newsItem)
-                  })}</span>
-                  
+                  <span>
+                    {this.state.currentNewsList &&
+                      this.state.currentNewsList.map(newsItem => {
+                        return this.newsItemGeneral(newsItem);
+                      })}
+                  </span>
                 </div>
               </div>
             </div>
