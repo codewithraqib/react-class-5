@@ -443,10 +443,10 @@ class WelcomePage extends React.PureComponent {
                   <div className="hf-line"></div>
                 </div>
 
-                <div className="tabs-container">
-                  {/* {this.state.tabs.map((tab, index) => {
+                {/* <div className="tabs-container">
+                  {this.state.tabs.map((tab, index) => {
                     return this.singleTab(tab, index);
-                  })} */}
+                  })}
                   {this.state.tabs.map(tab => {
                     return (
                       <div
@@ -460,11 +460,11 @@ class WelcomePage extends React.PureComponent {
                       </div>
                     );
                   })}
-                </div>
+                </div> */}
               </div>
-              <div className="tab-desc">
+              {/* <div className="tab-desc">
                 <span>{this.state.currentData}</span>
-              </div>
+              </div> */}
               <div className="main-news-container">
                 <div className="inner-news-container">
                   <div className="card" onClick={() => this.newsClicked(this.state.newscard[0])}>
@@ -612,7 +612,7 @@ class WelcomePage extends React.PureComponent {
               </div>
               <div className="right-overlay-img">
                 <div className="right-inner-overlay-img">
-                  <img src="/assets/images/right-inner.webp" alt="" />
+                  <img src="/assets/images/comgl.jpg" alt="" />
 
                   <div className="right-inner-overlay-text">How Did van Gogh’s Turbulent Mind</div>
                 </div>

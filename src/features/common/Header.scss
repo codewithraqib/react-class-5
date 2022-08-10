@@ -42,3 +42,56 @@
 
     }
 }
+
+@media only screen and (max-width: 800px){
+
+    .nav-container {
+     
+        // max-width: 100vw;
+
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        padding: 10px;
+        background-color: aquamarine;
+        gap: 1px;
+        
+    
+        .logo-container {
+            display: flex;
+        
+    
+            img {
+                height: 30px;
+    
+            }
+            .logo-text{
+                margin-left: 5px;
+                font-size: 9px;
+                font-weight: 400;
+            }
+        }
+    
+        .links-container {
+            display:flex;
+           justify-content: flex-end;
+
+        
+    
+            .links-container-inner {
+                span {
+                    font-size: 9px;
+                    padding: 4px;
+                    margin: 0 4px;
+                    background-color: beige;
+                    border-radius: 4px;
+    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+    
+        }
+    }
+  
+}

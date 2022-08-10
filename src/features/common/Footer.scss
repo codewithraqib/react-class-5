@@ -25,3 +25,36 @@
 
     }
 }
+@media only screen and (max-width: 800px){
+    .contenr-wrapper{
+    width: 0;
+    margin: 0;
+}
+
+    .footer-container{
+        
+        padding: 20px;
+        .footer-container-inner{
+            display: grid;
+            .footer-item{
+            
+            
+              
+               .footer-inner-item{
+                   margin-bottom: 10px;
+                   cursor: pointer;
+                   font-weight: 200;
+                   font-size: 12px;
+               }
+               .without-link{
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 200;
+                font-size: 12px;
+               }
+            }
+            
+        
+        }
+    }
+}

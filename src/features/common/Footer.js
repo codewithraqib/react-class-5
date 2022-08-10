@@ -18,7 +18,7 @@ class Footer extends React.PureComponent {
           {this.props.footerLinks.map(outerLink => {
             return (
               <div className="footer-item">
-                <div style={outerLink.head === true ? { fontSize: 20, fontWeight:600, marginBottom:10  } : {}}>{outerLink.name}</div>
+                <div style={outerLink.head === true ? { fontSize: 18, fontWeight:600, marginBottom:10  } : {}}>{outerLink.name}</div>
                 {outerLink.subLinks && 
                   outerLink.subLinks.map(subLink => {
                     return  subLink.link ? (
