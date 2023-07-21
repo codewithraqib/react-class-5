@@ -66,6 +66,7 @@
     "react-hot-loader": "^4.12.12",
     "react-icons": "^4.4.0",
     "react-lottie-player": "^1.4.3",
+    "react-pdf": "^5.7.2",
     "react-redux": "^7.1.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.0.1",
